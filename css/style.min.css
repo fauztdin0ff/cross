@@ -277,6 +277,9 @@ main {
     gap: calc(10px + 10 * ((100vw - 320px) / 880));
   }
 }
+.middle-header__icons img {
+  max-width: 25px;
+}
 .middle-header__link {
   position: relative;
 }
