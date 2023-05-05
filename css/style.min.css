@@ -139,7 +139,7 @@ main {
 .header__top {
   background-color: #1d1d1d;
   position: relative;
-  z-index: 7;
+  z-index: 12;
 }
 .header__middle {
   border-bottom: 1px solid hsla(240deg, 6%, 83%, 0.396);
@@ -393,7 +393,7 @@ main {
     position: relative;
     left: 0;
     height: 44px;
-    z-index: 5;
+    z-index: 12;
   }
   .menu__icon::before, .menu__icon::after, .menu__icon span {
     height: 3px;
@@ -451,7 +451,7 @@ main {
   }
   .menu__body._active {
     left: 50%;
-    z-index: 1;
+    z-index: 11;
     text-align: left;
     box-shadow: 0 0 10px #333;
   }
