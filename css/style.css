@@ -206,7 +206,12 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
+}
+@media (max-width: 1200px) {
+  .middle-header__body {
+    gap: calc(10px + 20 * ((100vw - 320px) / 880));
+  }
 }
 .middle-header__logo {
   flex: 0 1 150px;
@@ -235,9 +240,10 @@ main {
 .middle-header__search input {
   border: 1px solid hsla(240deg, 1%, 65%, 0.396);
   border-right: none;
-  padding: 10px 20px;
+  padding: 10px 10px 10px 20px;
   border-radius: 6px 0px 0px 6px;
   width: 100%;
+  background-color: #fff;
 }
 .middle-header__search input:focus {
   box-shadow: 0 0 5px rgb(55, 175, 55);
@@ -349,6 +355,9 @@ main {
   padding: 12px 7px 12px 25px;
   border-radius: 6px;
 }
+.bottom-header__catalog a:hover {
+  background-color: rgba(15, 132, 52, 0.7);
+}
 @media (max-width: 650px) {
   .bottom-header__search {
     flex: 1 1 auto;
@@ -359,6 +368,21 @@ main {
   margin-right: 5px;
 }
 
+@media (min-width: 651px) {
+  .menu {
+    padding-left: 35px;
+    position: relative;
+  }
+  .menu::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 1px;
+    background-color: hsla(240deg, 1%, 65%, 0.396);
+    position: absolute;
+    left: 0;
+  }
+}
 .menu__icon {
   display: none;
 }
@@ -517,3 +541,97 @@ main {
 
 /*--------------------------------------------footer---------------------------------------------*/
 /*---------------------------------------------Main--------------------------------------------*/
+.home {
+  position: relative;
+}
+.slide {
+  position: relative;
+}
+.slide__image img {
+  max-width: 100%;
+}
+.slide__text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+}
+.slide__text h1 {
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 0.9375em;
+  font-weight: 500;
+  font-size: 40px;
+}
+@media (max-width: 1200px) {
+  .slide__text h1 {
+    font-size: calc(16px + 24 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 400px) {
+  .slide__text h1 {
+    max-width: 80%;
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: #333;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #00ff00;
+}
+
+.swiper-button-prev {
+  background: url("../img/home/prevbtn.png") center/20px no-repeat;
+  left: 30px;
+}
+@media (max-width: 1000px) {
+  .swiper-button-prev {
+    left: 0;
+    background: url("../img/home/prevbtn.png") center/50% no-repeat;
+  }
+}
+
+.swiper-button-next {
+  background: url("../img/home/nextbtn.png") center/20px no-repeat;
+  right: 30px;
+}
+@media (max-width: 1000px) {
+  .swiper-button-next {
+    right: 0;
+    background: url("../img/home/nextbtn.png") center/50% no-repeat;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgb(29, 183, 101);
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 1200px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: calc(15px + 15 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    height: calc(15px + 15 * ((100vw - 320px) / 880));
+  }
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgb(79, 79, 79);
+}
