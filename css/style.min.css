@@ -445,13 +445,13 @@ main {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(5px);
     border-radius: 6px 0px 0px 6px;
+    z-index: 11;
   }
   .menu__body a {
     font-size: 18px;
   }
   .menu__body._active {
     left: 50%;
-    z-index: 11;
     text-align: left;
     box-shadow: 0 0 10px #333;
   }
