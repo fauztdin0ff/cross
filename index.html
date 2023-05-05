@@ -4,8 +4,8 @@
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
    <link rel="stylesheet" href="css/style.min.css">
    <title>Document</title>
 </head>
@@ -29,24 +29,24 @@
       <div class="middle-header__body container">
          <div class="middle-header__logo">
             <a href="https://crossmag.uz/">
-               <img src="img/header/logo.png" alt="crossMag">
+               <img src="../img/header/logo.png" alt="crossMag">
             </a>
          </div>
          <form action="/search" method="GET" class="middle-header__search">
             <input type="search" name="q" placeholder="поиск..." tabindex="3">
-            <button type="submit" tabindex="4"><img src="img/header/search.png" alt="search"></button>
+            <button type="submit" tabindex="4"><img src="../img/header/search.png" alt="search"></button>
          </form>
          <div class="middle-header__icons">
             <div class="middle-header__link">
-               <a href="" tabindex="5"><img src="img/header/wishlist.svg" alt="Избранное"><span>Избранное</span></a>
+               <a href="" tabindex="5"><img src="../img/header/wishlist.svg" alt="Избранное"><span>Избранное</span></a>
                <span class="middle-header__marq"></span>
             </div>
             <div class="middle-header__link">
-               <a href="" tabindex="6"><img src="img/header/bag.svg" alt="Корзина"><span>Корзина</span></a>
+               <a href="" tabindex="6"><img src="../img/header/bag.svg" alt="Корзина"><span>Корзина</span></a>
                <span class="middle-header__marq"></span>
             </div>
             <div class="middle-header__link">
-               <a href="" tabindex="7"><img src="img/header/account.svg" alt="Пользователь"><span>Войти</span></a>
+               <a href="" tabindex="7"><img src="../img/header/account.svg" alt="Пользователь"><span>Войти</span></a>
                <span class="middle-header__marq"></span>
             </div>
          </div>
@@ -75,9 +75,44 @@
       </div>
    </div>
 </header>
-      <main>
+      <main class="main">
+         <section class="home">
+            <div class="home__body container">
+               <div class="home__slider swiper">
+                  <div class="swiper-wrapper">
+                     <div class="home__slide slide swiper-slide">
+                        <div class="slide__image">
+                           <picture>
+                              <source media="(max-width: 400px)" srcset="img/home/baner1mobile.png">
+                              <source media="(max-width: 650px)" srcset="img/home/baner1tablet.png">
+                              <source media="(min-width: 651px)" srcset="img/home/baner1.png">
+                              <img src="img/home/baner1.png" alt="Alternative text">
+                           </picture>
+                        </div>
+                        <div class="slide__text">
+                           <h1>Первый интернет магазин<br>обуви в Ташкенте!</h1>
+                        </div>
+                     </div>
+                     <div class="home__slide slide swiper-slide">
+                        <div class="slide__image">
+                           <picture>
+                              <source media="(max-width: 400px)" srcset="img/home/baner2mobile.png">
+                              <source media="(max-width: 650px)" srcset="img/home/baner2tablet.png">
+                              <source media="(min-width: 651px)" srcset="img/home/baner2.png">
+                              <img src="img/home/baner2.png" alt="Alternative text">
+                           </picture>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-pagination"></div>
+               <div class="swiper-button-prev"></div>
+               <div class="swiper-button-next"></div>
+            </div>
+         </section>
       </main>
       <footer></footer>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
       <script src="js/app.min.js"></script>
    </div>
 </body>
