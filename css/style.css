@@ -599,67 +599,25 @@ main {
 }
 .slide__text-2 {
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-}
-@media (max-width: 1200px) {
-  .slide__text-2 {
-    top: calc(5px + 15 * ((100vw - 320px) / 880));
-  }
-}
-@media (max-width: 650px) {
-  .slide__text-2 {
-    top: 20px;
-  }
-}
-@media (max-width: 650px) and (max-width: 1200px) {
-  .slide__text-2 {
-    top: calc(10px + 10 * ((100vw - 320px) / 880));
-  }
-}
-@media (max-width: 400px) {
-  .slide__text-2 {
-    top: 20px;
-  }
-}
-@media (max-width: 400px) and (max-width: 1200px) {
-  .slide__text-2 {
-    top: calc(20px + 0 * ((100vw - 320px) / 880));
-  }
+  padding: 5px 20px;
 }
 .slide__text-2 h2 {
-  font-weight: 700;
   line-height: 1;
   font-weight: 500;
   font-family: Montserrat;
   white-space: nowrap;
   font-size: 30px;
-  color: #fff;
+  color: #333;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 5px 20px;
 }
 @media (max-width: 1200px) {
   .slide__text-2 h2 {
-    font-size: calc(10px + 20 * ((100vw - 320px) / 880));
-  }
-}
-@media (max-width: 650px) {
-  .slide__text-2 h2 {
-    font-size: 30px;
-  }
-}
-@media (max-width: 650px) and (max-width: 1200px) {
-  .slide__text-2 h2 {
-    font-size: calc(16px + 14 * ((100vw - 320px) / 880));
-  }
-}
-@media (max-width: 400px) {
-  .slide__text-2 h2 {
-    font-size: 30px;
-  }
-}
-@media (max-width: 400px) and (max-width: 1200px) {
-  .slide__text-2 h2 {
-    font-size: calc(18px + 12 * ((100vw - 320px) / 880));
+    font-size: calc(14px + 16 * ((100vw - 320px) / 880));
   }
 }
 
@@ -861,6 +819,12 @@ main {
   background-color: rgb(12, 206, 5);
   margin-right: 5px;
 }
+@media (max-width: 479px) {
+  .product-card__stock .in-stock::before {
+    width: 5px;
+    height: 5px;
+  }
+}
 .product-card__stock .out-stock {
   color: rgb(217, 22, 22);
   display: none;
@@ -917,6 +881,14 @@ main {
   .product-card__bag {
     background: url("../img/home/bagSmall.png") 3px 45%/10px no-repeat;
     background-color: rgb(1, 178, 89);
+    padding: 3px 7px 3px 17px;
+  }
+}
+@media (max-width: 479px) {
+  .product-card__bag {
+    background: url("../img/home/bagSmall.png") 5px 45%/7px no-repeat;
+    background-color: rgb(1, 178, 89);
+    padding: 3px 7px 3px 17px;
   }
 }
 .product-card__wishlist {
@@ -1049,5 +1021,90 @@ main {
   .news-slider-btn-next {
     background: url("../img/home/nextbtn.png") center/10px no-repeat;
     background-color: #ccc;
+  }
+}
+
+/*--------------------------------------------summer banner---------------------------------------------*/
+.summer {
+  background: url("../img/home/summerBanner.png") no-repeat;
+  margin: 50px 0;
+}
+@media (max-width: 1150px) {
+  .summer {
+    background: url("../img/home/summerBanner.png") 70% 50%/cover no-repeat;
+  }
+}
+@media (max-width: 500px) {
+  .summer {
+    background: url("../img/home/summerBanner.png") 64% 50%/cover no-repeat;
+  }
+}
+.summer__body {
+  height: 25vw;
+  max-height: 300px;
+  min-height: 170px;
+  position: relative;
+}
+.summer__text {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-left: 20px;
+}
+@media (max-width: 1200px) {
+  .summer__text {
+    gap: calc(30px + 20 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 767px) {
+  .summer__text {
+    width: 50%;
+    align-items: start;
+  }
+}
+@media (max-width: 500px) {
+  .summer__text {
+    padding-left: 5px;
+  }
+}
+.summer__text h4 {
+  font-size: 40px;
+  color: #333;
+  font-weight: 700;
+}
+@media (max-width: 1200px) {
+  .summer__text h4 {
+    font-size: calc(20px + 20 * ((100vw - 320px) / 880));
+  }
+}
+.summer__text a {
+  font-size: 24px;
+  color: #333;
+  padding: 3px 15px;
+  border-radius: 16px;
+  border: 1px solid #333;
+  transition: all 0.2s ease 0s;
+}
+@media (max-width: 1200px) {
+  .summer__text a {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+  }
+}
+.summer__text a:hover {
+  color: #fff;
+  border: 1px solid #fff;
+}
+@media (max-width: 767px) {
+  .summer__text a {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 555px) {
+  .summer__text a {
+    margin-left: 0px;
   }
 }
