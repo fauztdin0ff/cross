@@ -620,6 +620,40 @@ main {
     font-size: calc(14px + 16 * ((100vw - 320px) / 880));
   }
 }
+.slide__text-3 {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  font-family: Montserrat;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px;
+  width: 40%;
+  font-size: 20px;
+  color: #fff;
+}
+@media (max-width: 1200px) {
+  .slide__text-3 {
+    font-size: calc(12px + 8 * ((100vw - 320px) / 880));
+  }
+}
+.slide__text-3 p:first-child {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+@media (max-width: 1200px) {
+  .slide__text-3 p:first-child {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 450px) {
+  .slide__text-3 {
+    width: 50%;
+    left: 15px;
+  }
+}
 
 .swiper-pagination-bullet {
   background-color: #333;
