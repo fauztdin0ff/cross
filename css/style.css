@@ -1026,7 +1026,7 @@ main {
 
 /*--------------------------------------------summer banner---------------------------------------------*/
 .summer {
-  background: url("../img/home/summerBanner.png") no-repeat;
+  background: url("../img/home/summerBanner.png") center no-repeat;
   margin: 50px 0;
 }
 @media (max-width: 1150px) {
@@ -1107,4 +1107,98 @@ main {
   .summer__text a {
     margin-left: 0px;
   }
+}
+
+/*------------------------------------------------services---------------------------------------------*/
+.services__body {
+  padding: 40px 0px;
+}
+.services__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.services__title {
+  margin-bottom: 40px;
+}
+@media (max-width: 650px) {
+  .services__title {
+    margin-left: 20px;
+  }
+}
+.services__title h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+@media (max-width: 1200px) {
+  .services__title h2 {
+    font-size: calc(18px + 10 * ((100vw - 320px) / 880));
+  }
+}
+.services__title span {
+  font-weight: 500;
+}
+.services__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+@media (max-width: 650px) {
+  .services__items {
+    gap: 15px;
+  }
+}
+@media (max-width: 400px) {
+  .services__items {
+    gap: 10px;
+  }
+}
+.services__item {
+  flex: 0 1 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 650px) {
+  .services__item {
+    flex: 0 1 47%;
+  }
+}
+@media (max-width: 450px) {
+  .services__item {
+    margin-bottom: 20px;
+  }
+}
+
+.item-services__icon {
+  flex: 0 1 33.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 450px) {
+  .item-services__icon img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.item-services__text {
+  flex: 0 1 60%;
+}
+.item-services__text h6 {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+@media (max-width: 450px) {
+  .item-services__text h6 {
+    font-size: 14px;
+  }
+}
+.item-services__text p {
+  color: #6f7682;
+  font-size: 12px;
 }
