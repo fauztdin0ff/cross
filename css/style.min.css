@@ -96,6 +96,34 @@ img {
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?duz1cd");
+  src: url("../fonts/icomoon.eot?duz1cd#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?duz1cd") format("truetype"), url("../fonts/icomoon.woff?duz1cd") format("woff"), url("../fonts/icomoon.svg?duz1cd#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=_icon-]::before,
+[class*=" _icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  margin-right: 5px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-bagicon:before {
+  content: "\e900";
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -844,7 +872,7 @@ main {
 }
 @media (max-width: 1200px) {
   .product-card__price {
-    font-size: calc(15px + 5 * ((100vw - 320px) / 880));
+    font-size: calc(14px + 6 * ((100vw - 320px) / 880));
   }
 }
 @media (max-width: 450px) {
@@ -930,8 +958,9 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3px 10px 3px 15px;
-  background: url("../img/home/bagSmall.png") 20% 50%/12px no-repeat;
+  text-align: center;
+  padding: 5px 10px;
+  font-family: Montserrat;
   background-color: rgb(1, 178, 89);
   color: #fff;
   border-radius: 4px;
@@ -941,30 +970,15 @@ main {
 }
 @media (max-width: 1200px) {
   .product-card__bag {
-    font-size: calc(12px + 4 * ((100vw - 320px) / 880));
+    font-size: calc(8px + 8 * ((100vw - 320px) / 880));
   }
 }
 .product-card__bag:hover {
   background-color: rgb(1, 114, 54);
 }
-@media (max-width: 767px) {
+@media (max-width: 650px) {
   .product-card__bag {
-    background: url("../img/home/bagSmall.png") 5px 50%/12px no-repeat;
-    background-color: rgb(1, 178, 89);
-  }
-}
-@media (max-width: 620px) {
-  .product-card__bag {
-    background: url("../img/home/bagSmall.png") 3px 45%/10px no-repeat;
-    background-color: rgb(1, 178, 89);
-    padding: 3px 7px 3px 17px;
-  }
-}
-@media (max-width: 479px) {
-  .product-card__bag {
-    background: url("../img/home/bagSmall.png") 5px 45%/7px no-repeat;
-    background-color: rgb(1, 178, 89);
-    padding: 3px 7px 3px 17px;
+    padding: 3px 7px;
   }
 }
 .product-card__wishlist {
@@ -1305,15 +1319,29 @@ main {
   border-bottom: 1px solid hsla(240deg, 6%, 83%, 0.396);
   margin-bottom: 10px;
 }
+@media (max-width: 650px) {
+  .popup__quantity {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+  }
+}
 .popup__quantity .quantity-wrapper {
   display: flex;
   align-items: center;
+}
+.popup__quantity .quantity-wrapper input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 3px;
 }
 .popup__quantity .quantity-wrapper .minus,
 .popup__quantity .quantity-wrapper .plus {
   font-size: 20px;
   cursor: pointer;
   padding: 5px 10px;
+  transform: translateY(1px);
 }
 .popup__quantity .quantity-wrapper .quantity-input {
   width: 50px;
@@ -1328,17 +1356,32 @@ main {
 .popup__quantity .quantity-wrapper .quantity-input[type=number] {
   -moz-appearance: textfield;
 }
-@media (max-width: 650px) {
-  .popup .product-card__buttons {
-    max-height: 50px;
-    gap: 15px;
-  }
-  .popup .product-card__buttons img {
-    max-height: 50px;
-  }
+.popup .product-card__buttons {
+  justify-content: space-around;
+  gap: 10px;
+}
+.popup .product-card__buttons .product-card__bag {
+  font-size: 16px;
+}
+@media (max-width: 1200px) {
   .popup .product-card__buttons .product-card__bag {
-    padding: 7px 10px;
-    font-size: 16px;
+    font-size: calc(14px + 2 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 650px) {
+  .popup .product-card__buttons .product-card__bag {
+    max-width: 230px;
+    padding: 10px 15px;
+  }
+}
+.popup .product-card__buttons .product-card__wishlist {
+  flex: 0 1 20%;
+}
+@media (max-width: 650px) {
+  .popup .product-card__buttons .product-card__wishlist {
+    padding: 5px;
+    max-width: 45px;
+    max-height: 45px;
   }
 }
 
