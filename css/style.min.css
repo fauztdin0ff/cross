@@ -1179,6 +1179,12 @@ main {
 .popup__info {
   flex: 0 1 40%;
   padding: 20px;
+  position: relative;
+}
+@media (max-width: 650px) {
+  .popup__info {
+    padding: 10px;
+  }
 }
 .popup__images-container {
   width: 100%;
@@ -1210,28 +1216,41 @@ main {
   opacity: 0.7;
 }
 .popup__name {
-  font-size: 24px;
+  font-size: 26px;
   color: #1d1d1d;
   font-weight: 500;
   margin-bottom: 10px;
 }
 @media (max-width: 1200px) {
   .popup__name {
-    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+    font-size: calc(20px + 6 * ((100vw - 320px) / 880));
   }
 }
 .popup .product-card__stock {
   margin-bottom: 20px;
 }
+@media (max-width: 650px) {
+  .popup .product-card__stock {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    font-size: 12px;
+  }
+}
 .popup__price {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid hsla(240deg, 6%, 83%, 0.396);
 }
 @media (max-width: 1200px) {
   .popup__price {
-    font-size: calc(16px + 4 * ((100vw - 320px) / 880));
+    font-size: calc(18px + 4 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 650px) {
+  .popup__price {
+    margin-bottom: 10px;
   }
 }
 .popup__size {
@@ -1249,7 +1268,6 @@ main {
 }
 .popup__size label {
   display: block;
-  padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -1257,6 +1275,12 @@ main {
   font-family: Montserrat;
   font-size: 12px;
   border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+@media (max-width: 650px) {
+  .popup__size label:not(:first-child) {
+    padding: 3px 8px;
+  }
 }
 .popup__size input[type=radio]:checked + label {
   background-color: rgb(1, 178, 89);
@@ -1276,6 +1300,10 @@ main {
   left: 0;
   background-color: #ccc;
   transform: rotate(-45deg);
+}
+.popup__quantity {
+  border-bottom: 1px solid hsla(240deg, 6%, 83%, 0.396);
+  margin-bottom: 10px;
 }
 .popup__quantity .quantity-wrapper {
   display: flex;
