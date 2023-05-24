@@ -911,6 +911,9 @@ main {
   background-color: rgb(217, 22, 22);
   margin-right: 5px;
 }
+.product-card__sizes {
+  display: none;
+}
 .product-card__buttons {
   display: flex;
   gap: 10px;
@@ -1206,6 +1209,111 @@ main {
 .popup__images-container img:hover {
   opacity: 0.7;
 }
+.popup__name {
+  font-size: 24px;
+  color: #1d1d1d;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+@media (max-width: 1200px) {
+  .popup__name {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+  }
+}
+.popup .product-card__stock {
+  margin-bottom: 20px;
+}
+.popup__price {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid hsla(240deg, 6%, 83%, 0.396);
+}
+@media (max-width: 1200px) {
+  .popup__price {
+    font-size: calc(16px + 4 * ((100vw - 320px) / 880));
+  }
+}
+.popup__size {
+  margin-bottom: 20px;
+}
+.popup__size label {
+  margin-bottom: 5px;
+}
+.popup__size .radio-group {
+  display: flex;
+  gap: 10px;
+}
+.popup__size input[type=radio] {
+  display: none;
+}
+.popup__size label {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.popup__size label:not(:first-child) {
+  font-family: Montserrat;
+  font-size: 12px;
+  border: 1px solid #ccc;
+}
+.popup__size input[type=radio]:checked + label {
+  background-color: rgb(1, 178, 89);
+  color: #fff;
+  border: 1px solid transparent;
+}
+.popup__size label.unavailable {
+  cursor: not-allowed;
+  position: relative;
+}
+.popup__size label.unavailable::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: #ccc;
+  transform: rotate(-45deg);
+}
+.popup__quantity .quantity-wrapper {
+  display: flex;
+  align-items: center;
+}
+.popup__quantity .quantity-wrapper .minus,
+.popup__quantity .quantity-wrapper .plus {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.popup__quantity .quantity-wrapper .quantity-input {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+}
+.popup__quantity .quantity-wrapper .quantity-input::-webkit-inner-spin-button,
+.popup__quantity .quantity-wrapper .quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.popup__quantity .quantity-wrapper .quantity-input[type=number] {
+  -moz-appearance: textfield;
+}
+@media (max-width: 650px) {
+  .popup .product-card__buttons {
+    max-height: 50px;
+    gap: 15px;
+  }
+  .popup .product-card__buttons img {
+    max-height: 50px;
+  }
+  .popup .product-card__buttons .product-card__bag {
+    padding: 7px 10px;
+    font-size: 16px;
+  }
+}
+
 /*--------------------------------------------summer banner---------------------------------------------*/
 .summer {
   background: url("../img/home/summerBanner.png") center no-repeat;
@@ -1388,3 +1496,5 @@ main {
 .body._lock {
   overflow: hidden;
 }
+
+/*-----------------------------------------------------------------------------------------*/
