@@ -1318,6 +1318,7 @@ main {
 .popup__quantity {
   border-bottom: 1px solid hsla(240deg, 6%, 83%, 0.396);
   margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 @media (max-width: 650px) {
   .popup__quantity {
@@ -1355,6 +1356,115 @@ main {
 }
 .popup__quantity .quantity-wrapper .quantity-input[type=number] {
   -moz-appearance: textfield;
+}
+.popup__additional-size {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid hsla(240deg, 6%, 83%, 0.396);
+}
+.popup .size-additional__body {
+  display: flex;
+  gap: 20px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+.popup .size-additional__value label {
+  margin-bottom: 5px;
+}
+.popup .size-additional__value .radio-group {
+  display: flex;
+  gap: 10px;
+}
+.popup .size-additional__value input[type=radio] {
+  display: none;
+}
+.popup .size-additional__value label {
+  display: block;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.popup .size-additional__value label:not(:first-child) {
+  font-family: Montserrat;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+@media (max-width: 650px) {
+  .popup .size-additional__value label:not(:first-child) {
+    padding: 3px 8px;
+  }
+}
+.popup .size-additional__value input[type=radio]:checked + label {
+  background-color: rgb(1, 178, 89);
+  color: #fff;
+  border: 1px solid transparent;
+}
+.popup .size-additional__value label.unavailable {
+  cursor: not-allowed;
+  position: relative;
+}
+.popup .size-additional__value label.unavailable::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: #ccc;
+  transform: rotate(-45deg);
+}
+.popup .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: hsla(240deg, 6%, 83%, 0.5);
+  border-radius: 15px;
+}
+.popup .switch__input {
+  display: none;
+}
+.popup .switch__input:checked ~ .switch__handle {
+  transform: translateX(100%);
+  background-color: rgb(1, 178, 89);
+}
+.popup .switch__input:checked ~ .switch__label:first-of-type {
+  color: #fff;
+}
+.popup .switch__input:checked ~ .switch__label:last-of-type {
+  color: #fff;
+}
+.popup .switch__label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 2;
+}
+.popup .switch__label:first-of-type {
+  right: 0;
+  color: #fff;
+}
+.popup .switch__label:last-of-type {
+  left: 0;
+  color: #fff;
+}
+.popup .switch__handle {
+  width: 20px;
+  height: 20px;
+  background-color: #d74444;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+  z-index: 1;
 }
 .popup .product-card__buttons {
   justify-content: space-around;
