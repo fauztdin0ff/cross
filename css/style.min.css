@@ -1421,8 +1421,33 @@ main {
   background-color: hsla(240deg, 6%, 83%, 0.5);
   border-radius: 15px;
 }
+.popup .switch input[type=radio] {
+  -webkit-appearance: none; /* Для Safari */
+  -moz-appearance: none; /* Для Firefox */
+  appearance: none;
+  outline: none;
+  background-color: transparent;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+.popup .switch label {
+  text-decoration: none;
+  cursor: pointer;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
 .popup .switch__input {
   display: none;
+}
+.popup .switch__input:focus {
+  background-color: transparent;
+}
+.popup .switch__input:active {
+  background-color: transparent;
 }
 .popup .switch__input:checked ~ .switch__handle {
   transform: translateX(100%);
@@ -1446,6 +1471,15 @@ main {
   font-size: 12px;
   cursor: pointer;
   z-index: 2;
+}
+.popup .switch__label:focus {
+  background-color: transparent;
+}
+.popup .switch__label:focus-visible {
+  background-color: transparent;
+}
+.popup .switch__label:active {
+  background-color: transparent;
 }
 .popup .switch__label:first-of-type {
   right: 0;
