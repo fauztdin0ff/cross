@@ -29,24 +29,25 @@
       <div class="middle-header__body container">
          <div class="middle-header__logo">
             <a href="https://crossmag.uz/">
-               <img src="img/header/logo.png" alt="crossMag">
+               <img src="../img/header/logo.png" alt="crossMag">
             </a>
          </div>
          <form action="/search" method="GET" class="middle-header__search">
             <input type="search" name="q" placeholder="поиск..." tabindex="3">
-            <button type="submit" tabindex="4"><img src="img/header/search.png" alt="search"></button>
+            <button type="submit" tabindex="4"><img src="../img/header/search.png" alt="search"></button>
          </form>
          <div class="middle-header__icons">
             <div class="middle-header__link">
-               <a href="" tabindex="5"><img src="img/header/wishlist.svg" alt="Избранное"><span>Избранное</span></a>
+               <a href="" tabindex="5"><img src="../img/header/wishlist.svg" alt="Избранное"><span>Избранное</span></a>
                <span class="middle-header__marq"></span>
             </div>
             <div class="middle-header__link">
-               <a href="" tabindex="6"><img src="img/header/bag.svg" alt="Корзина"><span>Корзина</span></a>
+               <a class="cart-link" href="#" tabindex="6"><img src="../img/header/bag.svg"
+                     alt="Корзина"><span>Корзина</span></a>
                <span class="middle-header__marq"></span>
             </div>
             <div class="middle-header__link">
-               <a href="" tabindex="7"><img src="img/header/account.svg" alt="Пользователь"><span>Войти</span></a>
+               <a href="" tabindex="7"><img src="../img/header/account.svg" alt="Пользователь"><span>Войти</span></a>
                <span class="middle-header__marq"></span>
             </div>
          </div>
@@ -72,6 +73,13 @@
                </ul>
             </nav>
          </div>
+      </div>
+   </div>
+   <div id="cart" class="header__cart cart">
+      <div class="cart__body container">
+         <div class="cart__items"></div>
+         <div class="cart__total"></div>
+         <div class="cart__buttons">×</div>
       </div>
    </div>
 </header>
@@ -164,8 +172,8 @@
                                  <div class="product-card__name" data-name="Reebok Classic leather">
                                     <a href="">Reebok Classic leather</a>
                                  </div>
-                                 <div class="product-card__price" data-price="450.000 сум">
-                                    450.000 <span>сум</span>
+                                 <div class="product-card__price" data-price="450 000 сум">
+                                    450 000 <span>сум</span>
                                  </div>
                                  <div class="product-card__info">
                                     <div data-ajax="true" class="product-card__rating rating rating_set">
@@ -188,7 +196,8 @@
                                     <div class="product-card__sizes" data-unavailable-sizes="39,42"></div>
                                  </div>
                                  <div class="product-card__buttons">
-                                    <a href="#" class="product-card__bag _icon-bagicon">в корзину</a>
+                                    <a href="#" class="product-card__look _icon-search"
+                                       onclick="event.preventDefault()">смотреть</a>
                                     <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
                                           alt="like"></a>
                                  </div>
@@ -205,49 +214,8 @@
                                  <div class="product-card__name" data-name="Reebok Classic leather">
                                     <a href="">Reebok Classic leather</a>
                                  </div>
-                                 <div class="product-card__price" data-price="450.000 сум">
-                                    450.000 <span>сум</span>
-                                 </div>
-                                 <div class="product-card__info" data-unavailable-sizes="43,44">
-                                    <div data-ajax="true" class="product-card__rating rating rating_set">
-                                       <div class="rating__body">
-                                          <div class="rating__active"></div>
-                                          <div class="rating__items">
-                                             <input type="radio" class="rating__item" value="1" name="rating">
-                                             <input type="radio" class="rating__item" value="2" name="rating">
-                                             <input type="radio" class="rating__item" value="3" name="rating">
-                                             <input type="radio" class="rating__item" value="4" name="rating">
-                                             <input type="radio" class="rating__item" value="5" name="rating">
-                                          </div>
-                                       </div>
-                                       <div class="rating__value">4.6</div>
-                                    </div>
-                                    <div class="product-card__stock">
-                                       <p class="in-stock">в наличии</p>
-                                       <p class="out-stock">нет в наличии</p>
-                                    </div>
-                                    <div class="product-card__sizes" data-unavailable-sizes="41"></div>
-                                 </div>
-                                 <div class="product-card__buttons">
-                                    <a href="#" class="product-card__bag _icon-bagicon">в корзину</a>
-                                    <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
-                                          alt="like"></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="news__card product-card">
-                              <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
-                                 data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
-                                 <img src="img/home/reebok1.jpg" alt="">
-                              </div>
-                              <div class="product-card__body">
-                                 <div class="product-card__name" data-name="Reebok Classic leather">
-                                    <a href="">Reebok Classic leather</a>
-                                 </div>
-                                 <div class="product-card__price" data-price="450.000 сум">
-                                    450.000 <span>сум</span>
+                                 <div class="product-card__price" data-price="450 000 сум">
+                                    450 000 <span>сум</span>
                                  </div>
                                  <div class="product-card__info">
                                     <div data-ajax="true" class="product-card__rating rating rating_set">
@@ -267,133 +235,11 @@
                                        <p class="in-stock">в наличии</p>
                                        <p class="out-stock">нет в наличии</p>
                                     </div>
-                                    <div class="product-card__sizes" data-unavailable-sizes="39,42"></div>
+                                    <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
                                  </div>
                                  <div class="product-card__buttons">
-                                    <a href="#" class="product-card__bag _icon-bagicon">в корзину</a>
-                                    <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
-                                          alt="like"></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="news__card product-card">
-                              <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
-                                 data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
-                                 <img src="img/home/reebok1.jpg" alt="">
-                              </div>
-                              <div class="product-card__body">
-                                 <div class="product-card__name" data-name="Reebok Classic leather">
-                                    <a href="">Reebok Classic leather</a>
-                                 </div>
-                                 <div class="product-card__price" data-price="450.000 сум">
-                                    450.000 <span>сум</span>
-                                 </div>
-                                 <div class="product-card__info" data-unavailable-sizes="43,44">
-                                    <div data-ajax="true" class="product-card__rating rating rating_set">
-                                       <div class="rating__body">
-                                          <div class="rating__active"></div>
-                                          <div class="rating__items">
-                                             <input type="radio" class="rating__item" value="1" name="rating">
-                                             <input type="radio" class="rating__item" value="2" name="rating">
-                                             <input type="radio" class="rating__item" value="3" name="rating">
-                                             <input type="radio" class="rating__item" value="4" name="rating">
-                                             <input type="radio" class="rating__item" value="5" name="rating">
-                                          </div>
-                                       </div>
-                                       <div class="rating__value">4.6</div>
-                                    </div>
-                                    <div class="product-card__stock">
-                                       <p class="in-stock">в наличии</p>
-                                       <p class="out-stock">нет в наличии</p>
-                                    </div>
-                                    <div class="product-card__sizes" data-unavailable-sizes="41"></div>
-                                 </div>
-                                 <div class="product-card__buttons">
-                                    <a href="#" class="product-card__bag _icon-bagicon">в корзину</a>
-                                    <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
-                                          alt="like"></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="news__card product-card">
-                              <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
-                                 data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
-                                 <img src="img/home/reebok1.jpg" alt="">
-                              </div>
-                              <div class="product-card__body">
-                                 <div class="product-card__name" data-name="Reebok Classic leather">
-                                    <a href="">Reebok Classic leather</a>
-                                 </div>
-                                 <div class="product-card__price" data-price="450.000 сум">
-                                    450.000 <span>сум</span>
-                                 </div>
-                                 <div class="product-card__info">
-                                    <div data-ajax="true" class="product-card__rating rating rating_set">
-                                       <div class="rating__body">
-                                          <div class="rating__active"></div>
-                                          <div class="rating__items">
-                                             <input type="radio" class="rating__item" value="1" name="rating">
-                                             <input type="radio" class="rating__item" value="2" name="rating">
-                                             <input type="radio" class="rating__item" value="3" name="rating">
-                                             <input type="radio" class="rating__item" value="4" name="rating">
-                                             <input type="radio" class="rating__item" value="5" name="rating">
-                                          </div>
-                                       </div>
-                                       <div class="rating__value">4.6</div>
-                                    </div>
-                                    <div class="product-card__stock">
-                                       <p class="in-stock">в наличии</p>
-                                       <p class="out-stock">нет в наличии</p>
-                                    </div>
-                                    <div class="product-card__sizes" data-unavailable-sizes="39,42"></div>
-                                 </div>
-                                 <div class="product-card__buttons">
-                                    <a href="#" class="product-card__bag _icon-bagicon">в корзину</a>
-                                    <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
-                                          alt="like"></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="news__card product-card">
-                              <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
-                                 data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
-                                 <img src="img/home/reebok1.jpg" alt="">
-                              </div>
-                              <div class="product-card__body">
-                                 <div class="product-card__name" data-name="Reebok Classic leather">
-                                    <a href="">Reebok Classic leather</a>
-                                 </div>
-                                 <div class="product-card__price" data-price="450.000 сум">
-                                    450.000 <span>сум</span>
-                                 </div>
-                                 <div class="product-card__info" data-unavailable-sizes="43,44">
-                                    <div data-ajax="true" class="product-card__rating rating rating_set">
-                                       <div class="rating__body">
-                                          <div class="rating__active"></div>
-                                          <div class="rating__items">
-                                             <input type="radio" class="rating__item" value="1" name="rating">
-                                             <input type="radio" class="rating__item" value="2" name="rating">
-                                             <input type="radio" class="rating__item" value="3" name="rating">
-                                             <input type="radio" class="rating__item" value="4" name="rating">
-                                             <input type="radio" class="rating__item" value="5" name="rating">
-                                          </div>
-                                       </div>
-                                       <div class="rating__value">4.6</div>
-                                    </div>
-                                    <div class="product-card__stock">
-                                       <p class="in-stock">в наличии</p>
-                                       <p class="out-stock">нет в наличии</p>
-                                    </div>
-                                    <div class="product-card__sizes" data-unavailable-sizes="41"></div>
-                                 </div>
-                                 <div class="product-card__buttons">
-                                    <a href="#" class="product-card__bag _icon-bagicon">в корзину</a>
+                                    <a href="#" class="product-card__look _icon-search"
+                                       onclick="event.preventDefault()">смотреть</a>
                                     <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
                                           alt="like"></a>
                                  </div>
@@ -511,7 +357,7 @@
                         <label for="size-44">44</label>
                      </div>
                   </div>
-                  <div class="popup__quantity">
+                  <div class="popup__quantity" data-selected-quantity="1">
                      <p>Количество:</p>
                      <div class="quantity-wrapper">
                         <span class="minus">-</span>
@@ -520,7 +366,7 @@
                         <span class="plus">+</span>
                      </div>
                   </div>
-                  <div class="popup__additional-size size-additional">
+                  <div class="popup__additional-size size-additional" data-selected-additional-size="none">
                      <div class="size-additional__body">
                         <div class="size-additional__text">
                            <p>Дополнительный размер</p>
@@ -534,7 +380,6 @@
                         </div>
                      </div>
                      <div class="size-additional__value">
-                        <label>Размер:</label>
                         <div class="radio-group">
                            <input type="radio" id="add-size-39" name="add-size" value="39">
                            <label for="add-size-39">39</label>
@@ -552,14 +397,13 @@
                      </div>
                   </div>
                   <div class="product-card__buttons">
-                     <a href="#" class="product-card__bag _icon-bagicon">в корзину</a>
+                     <a href="#" class="product-card__bag _icon-bagicon" disabled>в корзину</a>
                      <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg" alt="like"></a>
                   </div>
                </div>
                <button class="popup__close">×</button>
             </div>
          </div>
-
       </main>
       <footer></footer>
       <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
