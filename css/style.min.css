@@ -98,8 +98,8 @@ img {
 }
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon.eot?cwpoxx");
-  src: url("../fonts/icomoon.eot?cwpoxx#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?cwpoxx") format("truetype"), url("../fonts/icomoon.woff?cwpoxx") format("woff"), url("../fonts/icomoon.svg?cwpoxx#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?30z3h3");
+  src: url("../fonts/icomoon.eot?30z3h3#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?30z3h3") format("truetype"), url("../fonts/icomoon.woff?30z3h3") format("woff"), url("../fonts/icomoon.svg?30z3h3#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -127,6 +127,10 @@ img {
 ._icon-search:before {
   content: "\e986";
   transform: scale(0.9);
+}
+
+._icon-checkmark:before {
+  content: "\ea10";
 }
 
 html {
@@ -1548,6 +1552,8 @@ main {
 }
 .popup .product-card__buttons .product-card__bag {
   font-size: 16px;
+  background-color: rgb(157, 157, 157);
+  pointer-events: none;
 }
 @media (max-width: 1200px) {
   .popup .product-card__buttons .product-card__bag {
@@ -1560,9 +1566,9 @@ main {
     padding: 10px 15px;
   }
 }
-.popup .product-card__buttons .product-card__bag[disabled] {
-  background-color: gray;
-  pointer-events: none;
+.popup .product-card__buttons .product-card__bag.active {
+  background-color: rgb(1, 178, 89);
+  pointer-events: auto;
 }
 .popup .product-card__buttons .product-card__wishlist {
   flex: 0 1 20%;
