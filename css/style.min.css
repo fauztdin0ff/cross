@@ -1167,7 +1167,7 @@ main {
   justify-content: center;
   align-items: start;
   display: none;
-  overflow: hidden;
+  overflow-y: auto;
   padding: 20px 0;
 }
 .popup__content {
@@ -1346,7 +1346,6 @@ main {
 .popup__size label.unavailable {
   cursor: not-allowed;
   position: relative;
-  pointer-events: none;
 }
 .popup__size label.unavailable::before {
   content: "";
