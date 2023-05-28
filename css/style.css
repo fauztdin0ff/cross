@@ -343,10 +343,9 @@ main {
 .middle-header__link {
   position: relative;
 }
-.middle-header__link:not(:last-child)::after {
-  content: "1";
+.middle-header__link .cart-link .cart-link-circle {
   font-family: serif;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 15px;
@@ -600,18 +599,80 @@ main {
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 9999;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   display: none;
   overflow-y: auto;
   padding: 20px 0;
 }
 .cart__body {
-  background-color: #fff;
   width: 80%;
-  height: 80%;
+  min-height: 80%;
+  padding: 20px;
+  border-radius: 5px;
+  background: url("../img/header/cartBg.png") center/contain no-repeat;
+  background-color: #fff;
 }
-.cart__items img {
-  width: 100px;
+.cart__item {
+  display: flex;
+  gap: 10px;
+  border: 1px solid hsla(240deg, 6%, 83%, 0.396);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.cart__item img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+}
+.cart__item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding-left: 20px;
+}
+.cart__item-name {
+  font-size: 22px;
+}
+@media (max-width: 1200px) {
+  .cart__item-name {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 880));
+  }
+}
+.cart__item-price {
+  font-size: 20px;
+  margin-bottom: 7px;
+  margin-top: -5px;
+}
+@media (max-width: 1200px) {
+  .cart__item-price {
+    font-size: calc(14px + 6 * ((100vw - 320px) / 880));
+  }
+}
+.cart__item-remove {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 5px;
+}
+.cart__item-remove:hover svg path {
+  fill: #d74444;
+}
+.cart__item-remove svg:hover path {
+  fill: #d74444;
+}
+.cart__total {
+  font-size: 24px;
+  font-family: Montserrat;
+}
+@media (max-width: 1200px) {
+  .cart__total {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 880));
+  }
 }
 .cart__buttons {
   font-size: 50px;
