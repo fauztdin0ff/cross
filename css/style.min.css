@@ -1772,6 +1772,14 @@ main {
   z-index: 9999;
   overflow-x: auto;
 }
+@media (min-width: 1024px) {
+  .fullscreen {
+    margin: 0;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
 
 .fullscreen img {
   max-width: 90%;
