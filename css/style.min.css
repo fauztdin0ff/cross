@@ -986,6 +986,7 @@ main {
 .news__content {
   position: relative;
 }
+
 .title {
   margin-bottom: 20px;
   color: #333;
@@ -1000,10 +1001,6 @@ main {
 }
 
 .product-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 300px;
   border: 1px solid hsla(240deg, 6%, 83%, 0.396);
   border-radius: 6px;
 }
@@ -1051,9 +1048,11 @@ main {
 .product-card__body {
   padding: 10px;
   border-top: 1px solid hsla(240deg, 6%, 83%, 0.396);
+  flex-grow: 1;
 }
 .product-card__name {
   margin-bottom: 5px;
+  flex-grow: 1;
   cursor: pointer;
 }
 .product-card__name .disabled {
@@ -1095,7 +1094,6 @@ main {
 .product-card__info {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
   margin-bottom: 10px;
   border-bottom: 1px solid hsla(240deg, 6%, 83%, 0.396);
 }
@@ -1782,8 +1780,9 @@ main {
 }
 
 .fullscreen img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /*--------------------------------------------summer banner---------------------------------------------*/
