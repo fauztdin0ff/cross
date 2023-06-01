@@ -603,13 +603,38 @@ main {
   overflow-y: auto;
   padding: 20px 0;
 }
+.cart.empty::before {
+  content: "Ваша корзина пуста";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  pointer-events: none;
+  font-size: 34px;
+  font-family: Montserrat;
+  color: #6f7682;
+  z-index: 2;
+  margin-top: 100px;
+}
+@media (max-width: 1200px) {
+  .cart.empty::before {
+    font-size: calc(20px + 14 * ((100vw - 320px) / 880));
+  }
+}
+.cart.empty .go-check {
+  display: none;
+}
 .cart__body {
   width: 80%;
   min-height: 80%;
-  padding: 20px;
+  padding: 20px 20px 120px 20px;
   border-radius: 5px;
-  background: url("../img/header/cartBg.png") center/contain no-repeat;
   background-color: #fff;
+  position: relative;
 }
 @media (max-width: 1023px) {
   .cart__body {
@@ -737,13 +762,59 @@ main {
 .cart__total {
   font-size: 24px;
   font-family: Montserrat;
+  text-align: center;
 }
 @media (max-width: 1200px) {
   .cart__total {
     font-size: calc(18px + 6 * ((100vw - 320px) / 880));
   }
 }
-.cart__buttons {
+.cart__checkout {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 5px;
+}
+@media (max-width: 650px) {
+  .cart__checkout {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+}
+.cart__checkout a {
+  padding: 10px 25px;
+  background-color: rgb(1, 178, 89);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 22px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  font-family: Montserrat;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 1200px) {
+  .cart__checkout a {
+    font-size: calc(14px + 8 * ((100vw - 320px) / 880));
+  }
+}
+.cart__checkout a:first-child {
+  background-color: #ccc;
+  color: #333;
+  padding: 10px 20px;
+}
+.cart__checkout a:first-child:hover {
+  background-color: rgb(179, 179, 179);
+}
+.cart__checkout a:last-child:hover {
+  background-color: #108740;
+}
+.cart__button-close {
   font-size: 50px;
   position: fixed;
   top: 20px;
@@ -761,14 +832,14 @@ main {
   border-radius: 50%;
 }
 @media (max-width: 767px) {
-  .cart__buttons {
+  .cart__button-close {
     top: 10px;
     right: 10px;
     font-size: 40px;
   }
 }
 @media (max-width: 450px) {
-  .cart__buttons {
+  .cart__button-close {
     top: 5px;
     right: 5px;
     width: 35px;
@@ -1338,6 +1409,12 @@ main {
   display: flex;
   overflow-y: auto;
 }
+.popup__content .fly-animation {
+  animation-name: fly;
+  animation-duration: 0.8s; /* Измените продолжительность анимации по своему усмотрению */
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
 @media (max-width: 1023px) {
   .popup__content {
     width: 80%;
@@ -1746,6 +1823,16 @@ main {
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes fly {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(40vw, -40vh);
+    opacity: 0;
   }
 }
 .pulse-animation {
