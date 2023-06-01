@@ -1411,7 +1411,7 @@ main {
 }
 .popup__content .fly-animation {
   animation-name: fly;
-  animation-duration: 0.8s; /* Измените продолжительность анимации по своему усмотрению */
+  animation-duration: 0.8s;
   animation-fill-mode: forwards;
   overflow: hidden;
 }
@@ -1827,11 +1827,11 @@ main {
 }
 @keyframes fly {
   0% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1);
     opacity: 1;
   }
   100% {
-    transform: translate(40vw, -40vh);
+    transform: translate(40vw, -40vh) scale(0.3);
     opacity: 0;
   }
 }
