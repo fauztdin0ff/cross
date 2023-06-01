@@ -1850,7 +1850,9 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  order: 2;
+  background: url("../img/home/swipeBottom.png") 80% center/50px 50px no-repeat;
+  background-color: rgba(0, 0, 0, 0.9);
   display: none;
   justify-content: start;
   align-items: center;
@@ -1863,6 +1865,12 @@ main {
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
+  }
+}
+@media (max-width: 1023px) {
+  .fullscreen {
+    background: url("../img/home/swipeRight.png") center 95%/30px 30px no-repeat;
+    background-color: rgba(0, 0, 0, 0.9);
   }
 }
 
