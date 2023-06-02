@@ -29,27 +29,30 @@
       <div class="middle-header__body container">
          <div class="middle-header__logo">
             <a href="https://crossmag.uz/">
-               <img src="img/header/logo.png" alt="crossMag">
+               <img src="../img/header/logo.png" alt="crossMag">
             </a>
          </div>
          <form action="/search" method="GET" class="middle-header__search">
             <input type="search" name="q" placeholder="поиск..." tabindex="3">
-            <button type="submit" tabindex="4"><img src="img/header/search.png" alt="search"></button>
+            <button type="submit" tabindex="4"><img src="../img/header/search.png" alt="search"></button>
          </form>
          <div class="middle-header__icons">
             <div class="middle-header__link">
-               <a href="" tabindex="5"><img src="img/header/wishlist.svg" alt="Избранное"><span>Избранное</span></a>
+               <a class="wishlist-link" href="" tabindex="5"><img src="../img/header/wishlist.svg"
+                     alt="Избранное"><span>Избранное</span>
+                  <span class="wishlist-link-circle"></span>
+               </a>
                <span class="middle-header__marq"></span>
             </div>
             <div class="middle-header__link">
-               <a class="cart-link" href="#" tabindex="6"><img src="img/header/bag.svg"
+               <a class="cart-link" href="#" tabindex="6"><img src="../img/header/bag.svg"
                      alt="Корзина"><span>Корзина</span>
                   <span class="cart-link-circle"></span>
                </a>
                <span class="middle-header__marq"></span>
             </div>
             <div class="middle-header__link">
-               <a href="" tabindex="7"><img src="img/header/account.svg" alt="Пользователь"><span>Войти</span></a>
+               <a href="" tabindex="7"><img src="../img/header/account.svg" alt="Пользователь"><span>Войти</span></a>
                <span class="middle-header__marq"></span>
             </div>
          </div>
@@ -67,7 +70,7 @@
             </div>
             <nav class="menu__body">
                <ul class="menu__list">
-                  <li><a href="#" class="menu__link active">Главная</a></li>
+                  <li><a href="#" class="menu__link">Главная</a></li>
                   <li><a href="#" class="menu__link">Каталог</a></li>
                   <li><a href="#" class="menu__link">Оплата</a></li>
                   <li><a href="#" class="menu__link">Доставка</a></li>
@@ -86,6 +89,14 @@
             <a href="#" class="resume-buy">продолжить покупки</a>
             <a href="#" class="go-check _icon-bagicon">оформить заказ</a>
          </div>
+      </div>
+   </div>
+   <div id="wishlist" class="header__wishlist wishlist">
+      <div class="wishlist__body container">
+         <div class="wishlist__title">Избранное</div>
+         <div class="wishlist__items">
+         </div>
+         <div class="wishlist__button-close">×</div>
       </div>
    </div>
 </header>
@@ -537,6 +548,7 @@
                         <label for="size-44">44</label>
                      </div>
                   </div>
+                  <div class="popup__unavailable-sizes" data-unavailable-sizes=""></div>
                   <div class="popup__quantity" data-selected-quantity="1">
                      <p>Количество:</p>
                      <div class="quantity-wrapper">
@@ -579,6 +591,9 @@
                   <div class="product-card__buttons">
                      <a href="#" class="product-card__bag _icon-bagicon" disabled>в корзину</a>
                      <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg" alt="like"></a>
+                  </div>
+                  <div class="popup__go-cart">
+                     <a href="#" class="go-cart">открыть корзину</a>
                   </div>
                </div>
                <button class="popup__close">×</button>
