@@ -873,7 +873,7 @@ main {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 9999;
+  z-index: 8888;
   justify-content: center;
   align-items: flex-start;
   display: none;
@@ -2302,4 +2302,65 @@ main {
   overflow: hidden;
 }
 
-/*-----------------------------------------------------------------------------------------*/
+/*----------------------------------------Кнопка Колцентра и Вверх-------------------------------------------------*/
+.call-centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 40px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(1, 178, 89);
+  border-radius: 50%;
+  z-index: 100;
+}
+.call-centre::before, .call-centre::after {
+  content: "";
+  display: block;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 40px;
+  right: 15px;
+  border-radius: 50%;
+  background-color: none;
+  border: 1px solid rgb(1, 178, 89);
+  z-index: 100;
+}
+.call-centre::before {
+  animation: callCentre 2s ease infinite 0s;
+}
+.call-centre::after {
+  animation: callCentre 2s ease infinite 0.5s;
+}
+
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 110px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: url("../img/home/scrollToTop.png") center/contain no-repeat;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0.8;
+}
+
+@keyframes callCentre {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
