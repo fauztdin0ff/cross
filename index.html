@@ -29,30 +29,31 @@
       <div class="middle-header__body container">
          <div class="middle-header__logo">
             <a href="https://crossmag.uz/">
-               <img src="img/header/logo.png" alt="crossMag">
+               <img src="../img/header/logo.png" alt="crossMag">
             </a>
          </div>
          <form action="/search" method="GET" class="middle-header__search">
             <input type="search" name="q" placeholder="поиск..." tabindex="3">
-            <button type="submit" tabindex="4"><img src="img/header/search.png" alt="search"></button>
+            <button type="submit" tabindex="4"><img src="../img/header/search.png" alt="search"></button>
          </form>
          <div class="middle-header__icons">
             <div class="middle-header__link">
-               <a class="wishlist-link" href="" tabindex="5"><img src="img/header/wishlist.svg"
+               <a class="wishlist-link" href="" tabindex="5"><img src="../img/header/wishlist.svg"
                      alt="Избранное"><span>Избранное</span>
                   <span class="wishlist-link-circle"></span>
                </a>
                <span class="middle-header__marq"></span>
             </div>
             <div class="middle-header__link">
-               <a class="cart-link" href="#" tabindex="6"><img src="img/header/bag.svg"
+               <a class="cart-link" href="#" tabindex="6"><img src="../img/header/bag.svg"
                      alt="Корзина"><span>Корзина</span>
                   <span class="cart-link-circle"></span>
                </a>
                <span class="middle-header__marq"></span>
             </div>
             <div class="middle-header__link">
-               <a href="" tabindex="7"><img src="img/header/account.svg" alt="Пользователь"><span>Войти</span></a>
+               <a class="log-in" href="#" tabindex="7"><img src="../img/header/account.svg"
+                     alt="Пользователь"><span>Войти</span></a>
                <span class="middle-header__marq"></span>
             </div>
          </div>
@@ -70,7 +71,7 @@
             </div>
             <nav class="menu__body">
                <ul class="menu__list">
-                  <li><a href="#" class="menu__link active">Главная</a></li>
+                  <li><a href="#" class="menu__link">Главная</a></li>
                   <li><a href="#" class="menu__link">Каталог</a></li>
                   <li><a href="#" class="menu__link">Оплата</a></li>
                   <li><a href="#" class="menu__link">Доставка</a></li>
@@ -97,6 +98,60 @@
          <div class="wishlist__items">
          </div>
          <div class="wishlist__button-close">×</div>
+      </div>
+   </div>
+   <!-- Модальное окно -->
+   <div id="login-modal" class="login-modal">
+      <div class="login-modal__content">
+         <div class="login-modal__tabs">
+            <div class="login-modal__tab" data-tab="tab1">Вход</div>
+            <div class="login-modal__tab" data-tab="tab2">Регистрация</div>
+         </div>
+         <div id="tab1" class="tab-content tab-login">
+            <form class="login-modal__form">
+               <label for="username">Имя пользователя:</label>
+               <input type="text" id="username" name="username" required>
+               <label for="password">Пароль:</label>
+               <input type="password" id="password" name="password" required>
+               <button type="submit">Войти</button>
+               <a href="#" class="forgot-password">Забыли пароль?</a>
+               <a href="#" class="login-google">
+                  <svg viewBox="0 0 46 46" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg"
+                     aria-label="google">
+                     <g fill-rule="nonzero" fill="none">
+                        <path
+                           d="M9.577 23.156c0-1.504.253-2.946.702-4.299L2.4 12.9A22.958 22.958 0 000 23.156c0 3.686.863 7.162 2.397 10.25l7.875-5.97a13.57 13.57 0 01-.695-4.28"
+                           fill="#FBBC05"></path>
+                        <path
+                           d="M23.415 9.476a13.627 13.627 0 018.62 3.05l6.81-6.735c-4.15-3.576-9.47-5.788-15.43-5.788C14.162.003 6.209 5.243 2.4 12.9l7.883 5.959c1.815-5.458 6.99-9.383 13.133-9.383"
+                           fill="#EA4335"></path>
+                        <path
+                           d="M23.515 36.532c-6.176 0-11.376-3.9-13.202-9.324L2.395 33.13c3.826 7.609 11.82 12.814 21.12 12.814 5.738 0 11.216-1.994 15.33-5.734l-7.517-5.69c-2.12 1.308-4.791 2.013-7.814 2.013"
+                           fill="#34A853"></path>
+                        <path
+                           d="M45.975 22.938c0-1.36-.215-2.824-.535-4.184H23.513v8.89h12.62c-.629 3.031-2.346 5.361-4.804 6.877l7.516 5.69c4.32-3.925 7.13-9.773 7.13-17.273"
+                           fill="#4285F4"></path>
+                     </g>
+                  </svg>
+                  Войти через Google
+               </a>
+            </form>
+         </div>
+         <div id="tab2" class="tab-content tab-register">
+            <form class="register-modal__form">
+               <label for="register-username">Имя пользователя:<span>*</span></label>
+               <input type="text" id="register-username" name="register-username" required>
+               <label for="email">Email:<span>*</span></label>
+               <input type="email" id="email" name="email" required>
+               <label for="register-password">Пароль:<span>*</span></label>
+               <input type="password" id="register-password" name="register-password" required>
+               <label for="confirm-password">Подтвердите пароль:<span>*</span></label>
+               <input type="password" id="confirm-password" name="confirm-password" required>
+               <button type="submit">Зарегистрироваться</button>
+            </form>
+         </div>
+
+         <span class="login-modal__close">&times;</span>
       </div>
    </div>
 </header>
@@ -168,6 +223,12 @@
                </div>
                <div class="logotypes__image">
                   <img src="img/home/reebok.png" alt="reebok">
+               </div>
+               <div class="logotypes__image">
+                  <img src="img/home/asics.png" alt="asics">
+               </div>
+               <div class="logotypes__image">
+                  <img src="img/home/jordan.png" alt="jordan">
                </div>
             </div>
          </div>
@@ -500,7 +561,7 @@
                            <img src="img/home/car.png" alt="transport">
                         </div>
                         <div class="item-services__text">
-                           <h6>Бесплатная примерка</h6>
+                           <h6>Привезём две пары</h6>
                            <p>Закажите две пары если не уверены в размере</p>
                         </div>
                      </div>
