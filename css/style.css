@@ -1149,6 +1149,126 @@ main {
 }
 
 /*--------------------------------------------footer---------------------------------------------*/
+.footer {
+  background-color: #242424;
+}
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 40px 0 20px;
+}
+@media (max-width: 500px) {
+  .footer__top {
+    flex-direction: column;
+  }
+}
+.footer__bottom {
+  text-align: center;
+  padding: 10px 0;
+  color: #656565;
+}
+
+.top-footer__nav {
+  flex: 1 1 auto;
+  display: flex;
+  gap: 100px;
+  padding-left: 100px;
+}
+@media (max-width: 1200px) {
+  .top-footer__nav {
+    gap: calc(10px + 90 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .top-footer__nav {
+    padding-left: calc(0px + 100 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 450px) {
+  .top-footer__nav {
+    gap: 50px;
+  }
+}
+.top-footer__link:not(:last-child) {
+  margin-bottom: 5px;
+}
+.top-footer__link a {
+  color: #fff;
+  transition: all 0.3s ease 0s;
+}
+.top-footer__link a:hover {
+  color: rgb(1, 178, 89);
+}
+.top-footer__socials {
+  flex: 0 1 25%;
+  color: #656565;
+}
+@media (max-width: 599px) {
+  .top-footer__socials {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-top: 25px;
+  }
+}
+.top-footer__socials p {
+  margin-bottom: 5px;
+}
+.top-footer__social-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+@media (max-width: 599px) {
+  .top-footer__social-links {
+    display: flex;
+    justify-content: center;
+  }
+}
+.top-footer__social-links .telegram:hover path {
+  transition: all 0.3s ease 0s;
+  fill: rgb(73, 205, 78);
+}
+.top-footer__social-links .instagram:hover path {
+  transition: all 0.3s ease 0s;
+  fill: rgb(73, 205, 78);
+}
+.top-footer__social-link a {
+  color: #656565;
+}
+.top-footer__telephone a {
+  color: #fff;
+}
+.top-footer__telephone a:hover {
+  color: rgb(1, 178, 89);
+  transition: all 0.3s ease 0s;
+}
+
+.bottom-footer {
+  border-top: 1px solid hsla(240deg, 6%, 83%, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-footer__text {
+  font-size: 15px;
+}
+@media (max-width: 1200px) {
+  .bottom-footer__text {
+    font-size: calc(12px + 3 * ((100vw - 320px) / 880));
+  }
+}
+.bottom-footer__link {
+  color: #949494;
+  font-size: 15px;
+}
+@media (max-width: 1200px) {
+  .bottom-footer__link {
+    font-size: calc(12px + 3 * ((100vw - 320px) / 880));
+  }
+}
+
 /*---------------------------------------------Main--------------------------------------------*/
 .home {
   position: relative;
