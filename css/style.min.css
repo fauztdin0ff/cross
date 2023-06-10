@@ -1504,7 +1504,8 @@ main {
   border-radius: 6px;
   position: relative;
 }
-.product-card .new-shoe {
+.product-card .new-shoe,
+.product-card .hit-shoe {
   position: absolute;
   width: 50%;
   top: 10px;
@@ -1513,13 +1514,13 @@ main {
   align-items: center;
 }
 @media (max-width: 450px) {
-  .product-card .new-shoe {
+  .product-card .new-shoe,
+  .product-card .hit-shoe {
     top: 5px;
   }
 }
-.product-card .new-shoe::before {
-  content: "new";
-  background-color: rgb(209, 66, 66);
+.product-card .new-shoe::before,
+.product-card .hit-shoe::before {
   color: #fff;
   padding: 2px 8px;
   border-radius: 0px 6px 6px 0px;
@@ -1528,14 +1529,24 @@ main {
   font-size: 14px;
 }
 @media (max-width: 1200px) {
-  .product-card .new-shoe::before {
+  .product-card .new-shoe::before,
+  .product-card .hit-shoe::before {
     font-size: calc(8px + 6 * ((100vw - 320px) / 880));
   }
 }
 @media (max-width: 450px) {
-  .product-card .new-shoe::before {
+  .product-card .new-shoe::before,
+  .product-card .hit-shoe::before {
     padding: 2px 5px;
   }
+}
+.product-card .new-shoe:before {
+  content: "new";
+  background-color: rgb(209, 66, 66);
+}
+.product-card .hit-shoe:before {
+  content: "популярное";
+  background-color: #ff7f50;
 }
 .product-card:hover {
   box-shadow: 0 0 10px #ccc;
@@ -2594,6 +2605,32 @@ main {
 
 .body._lock {
   overflow: hidden;
+}
+
+/*--------------------------------------------Pays---------------------------------------------*/
+.pays {
+  background-color: #f7f7f7;
+}
+.pays__body {
+  padding: 50px 0;
+}
+.pays__items {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.pays__item {
+  flex: 0 1 10%;
+}
+@media (max-width: 500px) {
+  .pays__item {
+    flex: 0 1 20%;
+  }
+}
+.pays__item img {
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /*----------------------------------------Кнопка Колцентра и Вверх-------------------------------------------------*/
