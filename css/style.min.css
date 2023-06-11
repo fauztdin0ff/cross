@@ -2681,6 +2681,10 @@ main {
   cursor: pointer;
   z-index: 100;
   opacity: 0.8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
 }
 
 @keyframes callCentre {
