@@ -246,7 +246,7 @@ main {
   color: #fff;
 }
 .top-header__telephone a {
-  background: url("../img/header/phone.png") 5px 50%/15px no-repeat;
+  background: url("../../img/header/phone.png") 5px 50%/15px no-repeat;
   padding: 6px 10px 7px 23px;
   font-family: Montserrat;
   font-size: 14px;
@@ -257,7 +257,7 @@ main {
   }
 }
 .top-header__delivery a {
-  background: url("../img/header/delivery-icon.png") 5px 50%/20px no-repeat;
+  background: url("../../img/header/delivery-icon.png") 5px 50%/20px no-repeat;
   padding: 6px 10px 7px 33px;
   font-size: 16px;
   transform: translateY(1px);
@@ -424,7 +424,7 @@ main {
   flex: 0 1 40px;
 }
 .bottom-header__catalog a {
-  background: url("../img/header/menu.png") 7px 50%/11px 11px no-repeat;
+  background: url("../../img/header/menu.png") 7px 50%/11px 11px no-repeat;
   background-color: rgba(21, 169, 68, 0.7);
   display: flex;
   align-items: center;
@@ -555,19 +555,19 @@ main {
     margin-bottom: 20px;
   }
   .menu__list li:nth-child(1) {
-    background: url("../img/header/home.png") left/contain no-repeat;
+    background: url("../../img/header/home.png") left/contain no-repeat;
   }
   .menu__list li:nth-child(2) {
-    background: url("../img/header/catalog.png") left/contain no-repeat;
+    background: url("../../img/header/catalog.png") left/contain no-repeat;
   }
   .menu__list li:nth-child(3) {
-    background: url("../img/header/pay.png") left/contain no-repeat;
+    background: url("../../img/header/pay.png") left/contain no-repeat;
   }
   .menu__list li:nth-child(4) {
-    background: url("../img/header/delivery.png") left/contain no-repeat;
+    background: url("../../img/header/delivery.png") left/contain no-repeat;
   }
   .menu__list li:nth-child(5) {
-    background: url("../img/header/about.png") left/contain no-repeat;
+    background: url("../../img/header/about.png") left/contain no-repeat;
   }
 }
 @media (min-width: 651px) {
