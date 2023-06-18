@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+   <link rel="stylesheet" href="css/style.min.css">
+   <title>Document</title>
+</head>
+
+<body class="body">
+   <div class="wrapper">
+      @@include('html/header.html',{})
+      <main>
+
+
+
+         <div id="popup" class="popup">
+            <div class="popup__content">
+               <div class="popup__gallery">
+                  <img class="popup__image" src="" alt="Product Image">
+                  <div class="popup__images-container"></div>
+               </div>
+               <div class="popup__info">
+                  <h3 class="popup__name"></h3>
+                  <p class="popup__price"></p>
+                  <div class="product-card__stock">
+                     <p class="in-stock">в наличии</p>
+                     <p class="out-stock">нет в наличии</p>
+                  </div>
+                  <div class="popup__size">
+                     <label>Размер:</label>
+                     <div class="radio-group">
+                        <input type="radio" id="size-39" name="shoe-size" value="39">
+                        <label for="size-39">39</label>
+                        <input type="radio" id="size-40" name="shoe-size" value="40">
+                        <label for="size-40">40</label>
+                        <input type="radio" id="size-41" name="shoe-size" value="41">
+                        <label for="size-41">41</label>
+                        <input type="radio" id="size-42" name="shoe-size" value="42">
+                        <label for="size-42">42</label>
+                        <input type="radio" id="size-43" name="shoe-size" value="43">
+                        <label for="size-43">43</label>
+                        <input type="radio" id="size-44" name="shoe-size" value="44">
+                        <label for="size-44">44</label>
+                     </div>
+                  </div>
+                  <div class="popup__unavailable-sizes" data-unavailable-sizes=""></div>
+                  <div class="popup__quantity" data-selected-quantity="1">
+                     <p>Количество:</p>
+                     <div class="quantity-wrapper">
+                        <span class="minus">-</span>
+                        <input type="number" class="quantity-input" id="quantity" name="quantity" min="1" max="10"
+                           value="1">
+                        <span class="plus">+</span>
+                     </div>
+                  </div>
+                  <div class="popup__additional-size size-additional" data-selected-additional-size="none">
+                     <div class="size-additional__body">
+                        <div class="size-additional__text">
+                           <p>Дополнительный размер</p>
+                        </div>
+                        <div class="size-additional__switch switch">
+                           <input type="radio" id="switch-on" name="switch" class="switch__input">
+                           <label for="switch-off" class="switch__label"></label>
+                           <input type="radio" id="switch-off" name="switch" class="switch__input">
+                           <label for="switch-on" class="switch__label"></label>
+                           <div class="switch__handle"></div>
+                        </div>
+                     </div>
+                     <div class="size-additional__value">
+                        <div class="radio-group">
+                           <input type="radio" id="add-size-39" name="add-size" value="39">
+                           <label for="add-size-39">39</label>
+                           <input type="radio" id="add-size-40" name="add-size" value="40">
+                           <label for="add-size-40">40</label>
+                           <input type="radio" id="add-size-41" name="add-size" value="41">
+                           <label for="add-size-41">41</label>
+                           <input type="radio" id="add-size-42" name="add-size" value="42">
+                           <label for="add-size-42">42</label>
+                           <input type="radio" id="add-size-43" name="add-size" value="43">
+                           <label for="add-size-43">43</label>
+                           <input type="radio" id="add-size-44" name="add-size" value="44">
+                           <label for="add-size-44">44</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="product-card__buttons">
+                     <a href="#" class="product-card__bag _icon-bagicon" disabled>в корзину</a>
+                     <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg" alt="like"></a>
+                  </div>
+                  <div class="popup__go-cart">
+                     <a href="#" class="go-cart">открыть корзину</a>
+                  </div>
+               </div>
+               <button class="popup__close">×</button>
+            </div>
+         </div>
+         <div class="fullscreen">
+         </div>
+         <button class="call-centre">
+            <svg class="b24-crm-button-icon b24-crm-button-icon-active" width="28" height="29"
+               xmlns="http://www.w3.org/2000/svg">
+               <path class="b24-crm-button-chat-icon"
+                  d="M25.99 7.744a2 2 0 012 2v11.49a2 2 0 01-2 2h-1.044v5.162l-4.752-5.163h-7.503a2 2 0 01-2-2v-1.872h10.073a3 3 0 003-3V7.744zM19.381 0a2 2 0 012 2v12.78a2 2 0 01-2 2h-8.69l-5.94 6.453V16.78H2a2 2 0 01-2-2V2a2 2 0 012-2h17.382z"
+                  fill=" #FFFFFF" fill-rule="evenodd"></path>
+            </svg>
+         </button>
+         <button class="scroll-to-top"></button>
+      </main>
+      @@include('html/footer.html',{})
+      <script src="js/app.min.js"></script>
+   </div>
+</body>
+
+</html>

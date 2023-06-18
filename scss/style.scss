@@ -94,9 +94,198 @@ main {
 @import "header.scss";
 /*--------------------------------------------footer---------------------------------------------*/
 @import "footer.scss";
-/*---------------------------------------------КАТАЛОГ--------------------------------------------*/
+/*---------------------------------------------Main--------------------------------------------*/
 
-/*--------------------------------------------Карточка товара---------------------------------------------*/
+.home {
+   position: relative;
+   &__slider {
+      padding-top: 20px;
+      @media (max-width: 650px) {
+         & {
+            padding-top: 0;
+         }
+      }
+   }
+}
+.slide {
+   position: relative;
+   &__image {
+      & img {
+         max-width: 100%;
+         border-radius: 10px;
+         @media (max-width: 650px) {
+            & {
+               border-radius: 0;
+            }
+         }
+      }
+   }
+   &__text {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #fff;
+      & h1 {
+         font-weight: 500;
+         letter-spacing: 2px;
+         line-height: 1;
+         font-weight: 500;
+         font-family: Montserrat;
+         @include adaptiv-value("font-size", 38, 14, 1);
+         @media (max-width: 450px) {
+            & {
+               max-width: 80%;
+            }
+         }
+      }
+   }
+   &__text-2 {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 20px;
+      & h2 {
+         line-height: 1;
+         font-weight: 500;
+         font-family: Montserrat;
+         white-space: nowrap;
+         @include adaptiv-value("font-size", 30, 14, 1);
+         color: #333;
+         background-color: #fff;
+         border-radius: 16px;
+         padding: 5px 20px;
+      }
+   }
+   &__text-3 {
+      position: absolute;
+      top: 50%;
+      left: 50px;
+      transform: translateY(-50%);
+      font-family: Montserrat;
+      font-weight: 500;
+      color: #fff;
+      padding: 10px;
+      width: 40%;
+      @include adaptiv-value("font-size", 20, 12, 1);
+      color: #fff;
+      & p:first-child {
+         @include adaptiv-value("font-size", 24, 16, 1);
+         margin-bottom: 15px;
+         font-weight: 600;
+      }
+      @media (max-width: 450px) {
+         & {
+            width: 50%;
+            left: 15px;
+         }
+      }
+   }
+}
+.swiper-pagination-bullet {
+   background-color: #333;
+   opacity: 0.7;
+}
+.swiper-pagination-bullet-active {
+   opacity: 1;
+   background-color: $green;
+}
+.swiper-button-prev {
+   background: url("@img/home/prevbtn.png") center / 20px no-repeat;
+   left: 30px;
+   @media (max-width: 1000px) {
+      & {
+         & {
+            left: 0;
+            background: url("@img/home/prevbtn.png") center / 50% no-repeat;
+         }
+      }
+   }
+}
+.swiper-button-next {
+   background: url("@img/home/nextbtn.png") center / 20px no-repeat;
+   right: 30px;
+   @media (max-width: 1000px) {
+      & {
+         & {
+            right: 0;
+            background: url("@img/home/nextbtn.png") center / 50% no-repeat;
+         }
+      }
+   }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+   background-color: #9d9d9db1;
+   position: absolute;
+   @include adaptiv-value("width", 30, 15, 1);
+   @include adaptiv-value("height", 30, 15, 1);
+   transition: all 0.3s ease 0s;
+   border-radius: 50%;
+   &::after {
+      display: none;
+   }
+   &:hover {
+      background-color: rgb(79, 79, 79);
+   }
+   @media (max-width: 650px) {
+      & {
+         display: none;
+      }
+   }
+}
+
+/*--------------------------------------------логотипы---------------------------------------------*/
+.logotypes {
+   &__body {
+      padding: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 15px;
+      @media (max-width: 650px) {
+         & {
+            padding: 20px 0px;
+         }
+      }
+   }
+
+   &__image {
+      border-top: 1px solid rgb(211, 211, 211);
+      border-bottom: 1px solid rgb(211, 211, 211);
+      border-radius: 8px;
+      flex: 0 1 20%;
+      position: relative;
+      max-width: 100px;
+      padding: 5px 15px;
+      @media (max-width: 650px) {
+         & {
+            padding: 3px 5px;
+            border: none;
+            border: 1px solid rgb(211, 211, 211);
+         }
+      }
+      & img {
+         width: 100%;
+         object-fit: contain;
+      }
+   }
+}
+
+/*--------------------------------------------Новинки сезона---------------------------------------------*/
+.news {
+   &__body {
+      padding: 40px 0;
+   }
+
+   &__title {
+   }
+
+   &__content {
+      position: relative;
+   }
+}
 .title {
    & h2 {
       @include adaptiv-value("font-size", 24, 18, 1);
@@ -421,6 +610,59 @@ main {
 
       &__value {
          padding-left: 10px;
+      }
+   }
+}
+.news-slider-btn-prev,
+.news-slider-btn-next {
+   width: 30px;
+   height: 30px;
+   position: absolute;
+   top: 50%;
+   border-radius: 50%;
+   z-index: 2;
+   &:hover {
+      background-color: rgb(79, 79, 79);
+      cursor: pointer;
+   }
+   @media (max-width: 650px) {
+      & {
+         width: 15px;
+         height: 15px;
+      }
+   }
+}
+.news-slider-btn-prev {
+   left: 0;
+   background: url("@img/home/prevbtn.png") center / 20px no-repeat;
+   background-color: #ccc;
+   @media (min-width: 1200px) {
+      & {
+         left: -45px;
+      }
+   }
+   @media (max-width: 650px) {
+      & {
+         background: url("@img/home/prevbtn.png") center / 10px no-repeat;
+
+         background-color: #ccc;
+      }
+   }
+}
+.news-slider-btn-next {
+   right: 0;
+   background: url("@img/home/nextbtn.png") center / 20px no-repeat;
+   background-color: #ccc;
+   @media (min-width: 1200px) {
+      & {
+         right: -45px;
+      }
+   }
+   @media (max-width: 650px) {
+      & {
+         background: url("@img/home/nextbtn.png") center / 10px no-repeat;
+
+         background-color: #ccc;
       }
    }
 }
@@ -945,6 +1187,208 @@ main {
    max-height: 100%;
    object-fit: contain;
 }
+/*--------------------------------------------summer banner---------------------------------------------*/
+.summer {
+   background: url("@img/home/summerBanner.png") center no-repeat;
+   margin: 50px 0;
+   @media (max-width: 1150px) {
+      & {
+         background: url("@img/home/summerBanner.png") 70% 50% / cover no-repeat;
+      }
+   }
+   @media (max-width: 500px) {
+      & {
+         background: url("@img/home/summerBanner.png") 64% 50% / cover no-repeat;
+      }
+   }
+   &__body {
+      height: 25vw;
+      max-height: 300px;
+      min-height: 170px;
+      position: relative;
+   }
+
+   &__text {
+      position: absolute;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include adaptiv-value("gap", 50, 30, 1);
+      padding-left: 20px;
+      @media (max-width: 767px) {
+         & {
+            width: 50%;
+            align-items: start;
+         }
+      }
+      @media (max-width: 500px) {
+         & {
+            padding-left: 5px;
+         }
+      }
+      & h4 {
+         @include adaptiv-value("font-size", 40, 20, 1);
+         color: #333;
+         font-weight: 700;
+      }
+      & a {
+         @include adaptiv-value("font-size", 24, 16, 1);
+         color: #333;
+         padding: 3px 15px;
+         border-radius: 16px;
+         border: 1px solid #333;
+         transition: all 0.2s ease 0s;
+         &:hover {
+            color: #fff;
+            border: 1px solid #fff;
+         }
+         @media (max-width: 767px) {
+            & {
+               margin-left: 20px;
+            }
+         }
+         @media (max-width: 555px) {
+            & {
+               margin-left: 0px;
+            }
+         }
+      }
+   }
+}
+/*----------------------------------------------services---------------------------------------------*/
+.services {
+   &__body {
+      padding: 40px 0px;
+   }
+
+   &__content {
+      max-width: 800px;
+      margin: 0 auto;
+   }
+
+   &__title {
+      margin-bottom: 40px;
+      @media (max-width: 650px) {
+         & {
+            margin-left: 20px;
+         }
+      }
+      & h2 {
+         @include adaptiv-value("font-size", 28, 18, 1);
+         font-weight: 400;
+      }
+      & span {
+         font-weight: 500;
+      }
+   }
+
+   &__items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      @media (max-width: 650px) {
+         & {
+            gap: 15px;
+         }
+      }
+      @media (max-width: 400px) {
+         & {
+            gap: 10px;
+         }
+      }
+   }
+
+   &__item {
+      flex: 0 1 30%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @media (max-width: 650px) {
+         & {
+            flex: 0 1 47%;
+         }
+      }
+      @media (max-width: 450px) {
+         & {
+            & {
+               margin-bottom: 20px;
+            }
+         }
+      }
+   }
+}
+.item-services {
+   &__icon {
+      flex: 0 1 33.3%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: 450px) {
+         & img {
+            width: 50px;
+            height: 50px;
+         }
+      }
+   }
+
+   &__text {
+      flex: 0 1 60%;
+      & h6 {
+         color: #000;
+         font-size: 16px;
+         font-weight: 500;
+         margin-bottom: 7px;
+         @media (max-width: 450px) {
+            & {
+               font-size: 14px;
+            }
+         }
+      }
+      & p {
+         color: #6f7682;
+         font-size: 12px;
+      }
+   }
+}
+.body {
+   &._lock {
+      overflow: hidden;
+   }
+}
+
+/*--------------------------------------------Pays---------------------------------------------*/
+.pays {
+   background-color: #f7f7f7;
+   &__body {
+      padding: 50px 0;
+   }
+
+   &__items {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__item {
+      flex: 0 1 10%;
+      @media (max-width: 500px) {
+         & {
+            flex: 0 1 20%;
+         }
+      }
+      img {
+         max-width: 100%;
+         object-fit: contain;
+      }
+   }
+}
+
 /*----------------------------------------Кнопка Колцентра и Вверх-------------------------------------------------*/
 .call-centre {
    display: flex;
