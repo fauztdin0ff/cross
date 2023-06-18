@@ -1603,7 +1603,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  background: url("../img/home/magnifier.png") 7px 50%/20px 20px no-repeat;
+  background: url("../../img/home/magnifier.png") 7px 50%/20px 20px no-repeat;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 5px 10px 5px 30px;
