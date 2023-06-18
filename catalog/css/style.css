@@ -2450,7 +2450,7 @@ main {
   right: 20px;
   width: 40px;
   height: 40px;
-  background: url("../img/home/scrollToTop.png") center/contain no-repeat;
+  background: url("../../img/home/scrollToTop.png") center/contain no-repeat;
   border-radius: 50%;
   text-align: center;
   line-height: 50px;
