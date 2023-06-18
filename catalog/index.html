@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+   <link rel="stylesheet" href="css/nouislider.min.css">
+   <link rel="stylesheet" href="css/style.min.css">
+   <title>Каталог</title>
+</head>
+
+<body class="body">
+   <div class="wrapper">
+      <header class="header">
+   <div class="header__top top-header">
+      <div class="top-header__body container">
+         <div class="top-header__links">
+            <div class="top-header__telephone">
+               <a href="tel:+998901192620" tabindex="1">+998 90 119 26 20</a>
+            </div>
+            <div class="top-header__delivery">
+               <a href="#" tabindex="2">доставка</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__middle middle-header">
+      <div class="middle-header__body container">
+         <div class="middle-header__logo">
+            <a href="https://crossmag.uz/">
+               <img src="../img/header/logo.png" alt="crossMag">
+            </a>
+         </div>
+         <form action="/search" method="GET" class="middle-header__search">
+            <input type="search" name="q" placeholder="поиск..." tabindex="3">
+            <button type="submit" tabindex="4"><img src="../img/header/search.png" alt="search"></button>
+         </form>
+         <div class="middle-header__icons">
+            <div class="middle-header__link">
+               <a class="wishlist-link" href="" tabindex="5"><img src="../img/header/wishlist.svg"
+                     alt="Избранное"><span>Избранное</span>
+                  <span class="wishlist-link-circle"></span>
+               </a>
+               <span class="middle-header__marq"></span>
+            </div>
+            <div class="middle-header__link">
+               <a class="cart-link" href="#" tabindex="6"><img src="../img/header/bag.svg"
+                     alt="Корзина"><span>Корзина</span>
+                  <span class="cart-link-circle"></span>
+               </a>
+               <span class="middle-header__marq"></span>
+            </div>
+            <div class="middle-header__link">
+               <a class="log-in" href="#" tabindex="7"><img src="../img/header/account.svg"
+                     alt="Пользователь"><span>Войти</span></a>
+               <span class="middle-header__marq"></span>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__bottom bottom-header">
+      <div class="bottom-header__body container">
+         <div class="bottom-header__search"></div>
+         <div class="bottom-header__catalog">
+            <a href="#">подобрать</a>
+         </div>
+         <div class="bottom-header__menu menu">
+            <div class="menu__icon">
+               <span></span>
+            </div>
+            <nav class="menu__body">
+               <ul class="menu__list">
+                  <li><a href="#" class="menu__link">Главная</a></li>
+                  <li><a href="#" class="menu__link">Каталог</a></li>
+                  <li><a href="#" class="menu__link">Оплата</a></li>
+                  <li><a href="#" class="menu__link">Доставка</a></li>
+                  <li><a href="#" class="menu__link">О нас</a></li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+   </div>
+   <div id="cart" class="header__cart cart empty">
+      <div class="cart__body container">
+         <div class="cart__items"></div>
+         <div class="cart__total"></div>
+         <div class="cart__button-close">×</div>
+         <div class="cart__checkout">
+            <a href="#" class="resume-buy">продолжить покупки</a>
+            <a href="#" class="go-check _icon-bagicon">оформить заказ</a>
+         </div>
+      </div>
+   </div>
+   <div id="wishlist" class="header__wishlist wishlist">
+      <div class="wishlist__body container">
+         <div class="wishlist__title">Избранное</div>
+         <div class="wishlist__items">
+         </div>
+         <div class="wishlist__button-close">×</div>
+      </div>
+   </div>
+   <!-- Модальное окно -->
+   <div id="login-modal" class="login-modal">
+      <div class="login-modal__content">
+         <div class="login-modal__tabs">
+            <div class="login-modal__tab" data-tab="tab1">Вход</div>
+            <div class="login-modal__tab" data-tab="tab2">Регистрация</div>
+         </div>
+         <div id="tab1" class="tab-content tab-login">
+            <form class="login-modal__form">
+               <label for="username">Имя пользователя:</label>
+               <input type="text" id="username" name="username" required>
+               <label for="password">Пароль:</label>
+               <input type="password" id="password" name="password" required>
+               <button type="submit">Войти</button>
+               <a href="#" class="forgot-password">Забыли пароль?</a>
+               <a href="#" class="login-google">
+                  <svg viewBox="0 0 46 46" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg"
+                     aria-label="google">
+                     <g fill-rule="nonzero" fill="none">
+                        <path
+                           d="M9.577 23.156c0-1.504.253-2.946.702-4.299L2.4 12.9A22.958 22.958 0 000 23.156c0 3.686.863 7.162 2.397 10.25l7.875-5.97a13.57 13.57 0 01-.695-4.28"
+                           fill="#FBBC05"></path>
+                        <path
+                           d="M23.415 9.476a13.627 13.627 0 018.62 3.05l6.81-6.735c-4.15-3.576-9.47-5.788-15.43-5.788C14.162.003 6.209 5.243 2.4 12.9l7.883 5.959c1.815-5.458 6.99-9.383 13.133-9.383"
+                           fill="#EA4335"></path>
+                        <path
+                           d="M23.515 36.532c-6.176 0-11.376-3.9-13.202-9.324L2.395 33.13c3.826 7.609 11.82 12.814 21.12 12.814 5.738 0 11.216-1.994 15.33-5.734l-7.517-5.69c-2.12 1.308-4.791 2.013-7.814 2.013"
+                           fill="#34A853"></path>
+                        <path
+                           d="M45.975 22.938c0-1.36-.215-2.824-.535-4.184H23.513v8.89h12.62c-.629 3.031-2.346 5.361-4.804 6.877l7.516 5.69c4.32-3.925 7.13-9.773 7.13-17.273"
+                           fill="#4285F4"></path>
+                     </g>
+                  </svg>
+                  Войти через Google
+               </a>
+            </form>
+         </div>
+         <div id="tab2" class="tab-content tab-register">
+            <form class="register-modal__form">
+               <label for="register-username">Имя пользователя:<span>*</span></label>
+               <input type="text" id="register-username" name="register-username" required>
+               <label for="email">Email:<span>*</span></label>
+               <input type="email" id="email" name="email" required>
+               <label for="register-password">Пароль:<span>*</span></label>
+               <input type="password" id="register-password" name="register-password" required>
+               <label for="confirm-password">Подтвердите пароль:<span>*</span></label>
+               <input type="password" id="confirm-password" name="confirm-password" required>
+               <button type="submit">Зарегистрироваться</button>
+            </form>
+         </div>
+
+         <span class="login-modal__close">&times;</span>
+      </div>
+   </div>
+</header>
+      <main>
+         <div class="catalog">
+            <div class="catalog__body container">
+               <div class="breadcrumbs">
+                  <a href="/">Главная</a> /
+                  <span>Каталог</span>
+               </div>
+               <button id="filterToggleBtn" class="filter-toggle-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                     <path
+                        d="M9.99967 13.6667C11.2022 13.6667 12.2244 14.4385 12.598 15.5137L12.6428 15.5062L12.7497 15.5H18.2497C18.7559 15.5 19.1663 15.9104 19.1663 16.4167C19.1663 16.8868 18.8125 17.2743 18.3566 17.3272L18.2497 17.3334H12.7497C12.6978 17.3334 12.647 17.3291 12.5975 17.3208C12.2244 18.3949 11.2022 19.1667 9.99967 19.1667C8.79719 19.1667 7.77497 18.3949 7.40135 17.3197L7.35659 17.3272L7.24967 17.3334H1.74967C1.24341 17.3334 0.833008 16.923 0.833008 16.4167C0.833008 15.9466 1.18686 15.5592 1.64276 15.5062L1.74967 15.5H7.24967C7.30152 15.5 7.35236 15.5043 7.40185 15.5126C7.77498 14.4385 8.79719 13.6667 9.99967 13.6667ZM9.99967 15.5C9.49341 15.5 9.08301 15.9104 9.08301 16.4167C9.08301 16.923 9.49341 17.3334 9.99967 17.3334C10.5059 17.3334 10.9163 16.923 10.9163 16.4167C10.9163 15.9104 10.5059 15.5 9.99967 15.5ZM3.58301 7.25004C4.78549 7.25004 5.80771 8.02183 6.18133 9.09708L6.22609 9.08954L6.33301 9.08337H18.2497C18.7559 9.08337 19.1663 9.49378 19.1663 10C19.1663 10.4701 18.8125 10.8576 18.3566 10.9105L18.2497 10.9167H6.33301C6.28117 10.9167 6.23032 10.9124 6.18083 10.9041C5.8077 11.9782 4.78549 12.75 3.58301 12.75C2.06422 12.75 0.833008 11.5188 0.833008 10C0.833008 8.48126 2.06422 7.25004 3.58301 7.25004ZM3.58301 9.08337C3.07675 9.08337 2.66634 9.49378 2.66634 10C2.66634 10.5063 3.07675 10.9167 3.58301 10.9167C4.08927 10.9167 4.49967 10.5063 4.49967 10C4.49967 9.49378 4.08927 9.08337 3.58301 9.08337ZM13.6663 0.833374C14.8688 0.833374 15.891 1.60517 16.2647 2.68041L16.3094 2.67288L16.4163 2.66671H18.2497C18.7559 2.66671 19.1663 3.07711 19.1663 3.58337C19.1663 4.05347 18.8125 4.44092 18.3566 4.49387L18.2497 4.50004H16.4163C16.3645 4.50004 16.3137 4.49574 16.2642 4.48747C15.891 5.56158 14.8688 6.33337 13.6663 6.33337C12.4639 6.33337 11.4416 5.56158 11.068 4.48633L11.0233 4.49387L10.9163 4.50004H1.74967C1.24341 4.50004 0.833008 4.08964 0.833008 3.58337C0.833008 3.11327 1.18686 2.72583 1.64276 2.67288L1.74967 2.66671H10.9163C10.9682 2.66671 11.019 2.67101 11.0685 2.67928C11.4416 1.60517 12.4639 0.833374 13.6663 0.833374ZM13.6663 2.66671C13.1601 2.66671 12.7497 3.07711 12.7497 3.58337C12.7497 4.08964 13.1601 4.50004 13.6663 4.50004C14.1726 4.50004 14.583 4.08964 14.583 3.58337C14.583 3.07711 14.1726 2.66671 13.6663 2.66671Z"
+                        fill="#333333"></path>
+                  </svg>
+                  <span>фильтры</span>
+               </button>
+               <div class="catalog__filter filter">
+                  <div class="filter__container">
+                     <div class="filter__title">Фильтр</div>
+                     <p>Цена</p>
+                     <div class="range__items">
+                        <div class="range__item">
+                           <span>От: <input type="text" id="input-min"></span>
+                        </div>
+                        <div class="range__item">
+                           <span>До: <input type="text" id="input-max"></span>
+                        </div>
+                     </div>
+                     <div id="price-range"></div>
+
+
+                     <p>Бренд</p>
+                     <ul>
+                        <li>
+                           <label>
+                              <input type="checkbox" name="brand" value="adidas">
+                              Adidas
+                           </label>
+                        </li>
+                        <li>
+                           <label>
+                              <input type="checkbox" name="brand" value="puma">
+                              Puma
+                           </label>
+                        </li>
+                        <li>
+                           <label>
+                              <input type="checkbox" name="brand" value="newbalance">
+                              New Balance
+                           </label>
+                        </li>
+                     </ul>
+
+                     <p>Вид обуви</p>
+                     <ul>
+                        <li>
+                           <label>
+                              <input type="checkbox" name="type" value="sneakers">
+                              Кроссовки
+                           </label>
+                        </li>
+                        <li>
+                           <label>
+                              <input type="checkbox" name="type" value="sneakers">
+                              Кеды
+                           </label>
+                        </li>
+                        <li>
+                           <label>
+                              <input type="checkbox" name="type" value="loafers">
+                              Мокасины
+                           </label>
+                        </li>
+                     </ul>
+
+                     <p>Пол</p>
+                     <ul>
+                        <li>
+                           <label>
+                              <input type="checkbox" name="gender" value="male">
+                              Мужской
+                           </label>
+                        </li>
+                        <li>
+                           <label>
+                              <input type="checkbox" name="gender" value="female">
+                              Женский
+                           </label>
+                        </li>
+                        <li>
+                           <label>
+                              <input type="checkbox" name="gender" value="child">
+                              Детский
+                           </label>
+                        </li>
+                     </ul>
+                     <div class="filter-btns">
+                        <button class="reset-filter">Сбросить фильтр</button>
+                        <button class="close-filter">Закрыть</button>
+                     </div>
+                  </div>
+
+               </div>
+               <div class="catalog__content">
+                  <div class="catalog__sort">
+                     <select name="sort" id="sort">
+                        <option value="price-new">По дате добавления</option>
+                        <option value="price-cheap">Цена(сначала дешевые)</option>
+                        <option value="price-exp">Цена(сначала дорогие)</option>
+                     </select>
+                  </div>
+                  <div class="product__card-items">
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
+                           data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
+                           <picture>
+                              <source srcset="img/home/reebok1.jpg" type="image/webp"><img src="img/home/reebok1.jpg"
+                                 alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="Reebok Classic leather">
+                              <a href="" class="disabled">Reebok Classic leather</a>
+                           </div>
+                           <div class="product-card__price" data-price="450 000 сум">
+                              450 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="img/home/zig.webp"
+                           data-additional-images="img/home/zig.webp,img/home/zig3.webp,img/home/zig4.webp,img/home/zig5.webp">
+                           <picture>
+                              <source srcset="img/home/zig.webp" type="image/webp"><img src="img/home/zig.webp" alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="ZIG kinetica 3">
+                              <a href="" class="disabled">ZIG kinetica 3</a>
+                           </div>
+                           <div class="product-card__price" data-price="480 000 сум">
+                              480 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="44"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
+                           data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
+                           <picture>
+                              <source srcset="img/home/reebok1.jpg" type="image/webp"><img src="img/home/reebok1.jpg"
+                                 alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="Reebok Classic leather">
+                              <a href="" class="disabled">Reebok Classic leather</a>
+                           </div>
+                           <div class="product-card__price" data-price="450 000 сум">
+                              450 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
+                           data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
+                           <picture>
+                              <source srcset="img/home/reebok1.jpg" type="image/webp"><img src="img/home/reebok1.jpg"
+                                 alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="Reebok Classic leather">
+                              <a href="" class="disabled">Reebok Classic leather</a>
+                           </div>
+                           <div class="product-card__price" data-price="450 000 сум">
+                              450 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
+                           data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
+                           <picture>
+                              <source srcset="img/home/reebok1.jpg" type="image/webp"><img src="img/home/reebok1.jpg"
+                                 alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="Reebok Classic leather">
+                              <a href="" class="disabled">Reebok Classic leather</a>
+                           </div>
+                           <div class="product-card__price" data-price="450 000 сум">
+                              450 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="img/home/zig.webp"
+                           data-additional-images="img/home/zig.webp,img/home/zig3.webp,img/home/zig4.webp,img/home/zig5.webp">
+                           <picture>
+                              <source srcset="img/home/zig.webp" type="image/webp"><img src="img/home/zig.webp" alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="ZIG kinetica 3">
+                              <a href="" class="disabled">ZIG kinetica 3</a>
+                           </div>
+                           <div class="product-card__price" data-price="480 000 сум">
+                              480 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="44"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
+                           data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
+                           <picture>
+                              <source srcset="img/home/reebok1.jpg" type="image/webp"><img src="img/home/reebok1.jpg"
+                                 alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="Reebok Classic leather">
+                              <a href="" class="disabled">Reebok Classic leather</a>
+                           </div>
+                           <div class="product-card__price" data-price="450 000 сум">
+                              450 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="img/home/reebok1.jpg"
+                           data-additional-images="img/home/reebok1.jpg,img/home/reebok2.webp,img/home/reebok3.webp,img/home/reebok4.webp,img/home/reebok5.webp">
+                           <picture>
+                              <source srcset="img/home/reebok1.jpg" type="image/webp"><img src="img/home/reebok1.jpg"
+                                 alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="Reebok Classic leather">
+                              <a href="" class="disabled">Reebok Classic leather</a>
+                           </div>
+                           <div class="product-card__price" data-price="450 000 сум">
+                              450 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+         <div id="popup" class="popup">
+            <div class="popup__content">
+               <div class="popup__gallery">
+                  <img class="popup__image" src="" alt="Product Image">
+                  <div class="popup__images-container"></div>
+               </div>
+               <div class="popup__info">
+                  <h3 class="popup__name"></h3>
+                  <p class="popup__price"></p>
+                  <div class="product-card__stock">
+                     <p class="in-stock">в наличии</p>
+                     <p class="out-stock">нет в наличии</p>
+                  </div>
+                  <div class="popup__size">
+                     <label>Размер:</label>
+                     <div class="radio-group">
+                        <input type="radio" id="size-39" name="shoe-size" value="39">
+                        <label for="size-39">39</label>
+                        <input type="radio" id="size-40" name="shoe-size" value="40">
+                        <label for="size-40">40</label>
+                        <input type="radio" id="size-41" name="shoe-size" value="41">
+                        <label for="size-41">41</label>
+                        <input type="radio" id="size-42" name="shoe-size" value="42">
+                        <label for="size-42">42</label>
+                        <input type="radio" id="size-43" name="shoe-size" value="43">
+                        <label for="size-43">43</label>
+                        <input type="radio" id="size-44" name="shoe-size" value="44">
+                        <label for="size-44">44</label>
+                     </div>
+                  </div>
+                  <div class="popup__unavailable-sizes" data-unavailable-sizes=""></div>
+                  <div class="popup__quantity" data-selected-quantity="1">
+                     <p>Количество:</p>
+                     <div class="quantity-wrapper">
+                        <span class="minus">-</span>
+                        <input type="number" class="quantity-input" id="quantity" name="quantity" min="1" max="10"
+                           value="1">
+                        <span class="plus">+</span>
+                     </div>
+                  </div>
+                  <div class="popup__additional-size size-additional" data-selected-additional-size="none">
+                     <div class="size-additional__body">
+                        <div class="size-additional__text">
+                           <p>Дополнительный размер</p>
+                        </div>
+                        <div class="size-additional__switch switch">
+                           <input type="radio" id="switch-on" name="switch" class="switch__input">
+                           <label for="switch-off" class="switch__label"></label>
+                           <input type="radio" id="switch-off" name="switch" class="switch__input">
+                           <label for="switch-on" class="switch__label"></label>
+                           <div class="switch__handle"></div>
+                        </div>
+                     </div>
+                     <div class="size-additional__value">
+                        <div class="radio-group">
+                           <input type="radio" id="add-size-39" name="add-size" value="39">
+                           <label for="add-size-39">39</label>
+                           <input type="radio" id="add-size-40" name="add-size" value="40">
+                           <label for="add-size-40">40</label>
+                           <input type="radio" id="add-size-41" name="add-size" value="41">
+                           <label for="add-size-41">41</label>
+                           <input type="radio" id="add-size-42" name="add-size" value="42">
+                           <label for="add-size-42">42</label>
+                           <input type="radio" id="add-size-43" name="add-size" value="43">
+                           <label for="add-size-43">43</label>
+                           <input type="radio" id="add-size-44" name="add-size" value="44">
+                           <label for="add-size-44">44</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="product-card__buttons">
+                     <a href="#" class="product-card__bag _icon-bagicon" disabled>в корзину</a>
+                     <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg" alt="like"></a>
+                  </div>
+                  <div class="popup__go-cart">
+                     <a href="#" class="go-cart">открыть корзину</a>
+                  </div>
+               </div>
+               <button class="popup__close">×</button>
+            </div>
+         </div>
+         <div class="fullscreen">
+         </div>
+         <button class="call-centre">
+            <svg class="b24-crm-button-icon b24-crm-button-icon-active" width="28" height="29"
+               xmlns="http://www.w3.org/2000/svg">
+               <path class="b24-crm-button-chat-icon"
+                  d="M25.99 7.744a2 2 0 012 2v11.49a2 2 0 01-2 2h-1.044v5.162l-4.752-5.163h-7.503a2 2 0 01-2-2v-1.872h10.073a3 3 0 003-3V7.744zM19.381 0a2 2 0 012 2v12.78a2 2 0 01-2 2h-8.69l-5.94 6.453V16.78H2a2 2 0 01-2-2V2a2 2 0 012-2h17.382z"
+                  fill=" #FFFFFF" fill-rule="evenodd"></path>
+            </svg>
+         </button>
+         <button class="scroll-to-top"></button>
+      </main>
+      <footer class="footer">
+   <div class="footer__body container">
+      <div class="footer__top top-footer">
+         <nav class="top-footer__nav">
+            <ul class="top-footer__list">
+               <li class="top-footer__link">
+                  <a href="">Главная</a>
+               </li>
+               <li class="top-footer__link">
+                  <a href="">Каталог</a>
+               </li>
+               <li class="top-footer__link">
+                  <a href="">Оплата и доставка</a>
+               </li>
+               <li class="top-footer__link">
+                  <a href="">Возврат</a>
+               </li>
+               <li class="top-footer__link">
+                  <a href="">Вопрос-ответ</a>
+               </li>
+            </ul>
+            <ul class="top-footer__list">
+               <li class="top-footer__link">
+                  <a href="">Новинки</a>
+               </li>
+               <li class="top-footer__link">
+                  <a href="">Бренды</a>
+               </li>
+               <li class="top-footer__link">
+                  <a href="">Топ продаж</a>
+               </li>
+               <li class="top-footer__link">
+                  <a href="">Размерная сетка</a>
+               </li>
+            </ul>
+         </nav>
+         <div class="top-footer__socials">
+            <p>© Магазин crossMAG</p>
+            <div class="top-footer__social-links">
+               <div class="top-footer__social-link">
+                  <a href="">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#0088CC" class="telegram"
+                        viewBox="0 0 16 16">
+                        <path
+                           d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+                     </svg>
+                  </a>
+               </div>
+               <div class="top-footer__social-link">
+                  <a href="">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="url(#instagramGradient)"
+                        class="instagram" viewBox="0 0 16 16">
+                        <defs>
+                           <linearGradient id="instagramGradient" gradientTransform="rotate(45)">
+                              <stop offset="0%" stop-color="#833AB4" />
+                              <stop offset="100%" stop-color="#DD2A7B" />
+                           </linearGradient>
+                        </defs>
+                        <path
+                           d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                     </svg>
+
+                  </a>
+               </div>
+            </div>
+            <div class="top-footer__telephone">
+               <a href="">+998 90 119 26 20</a>
+            </div>
+         </div>
+      </div>
+      <div class="footer__bottom bottom-footer">
+         <div class="bottom-footer__text">
+            <p>crossMAG 2023. All right reserved</p>
+            <a href="" class="bottom-footer__link">Политика конфиденциальности</a>
+         </div>
+      </div>
+   </div>
+</footer>
+      <script src="js/nouislider.min.js"></script>
+      <script src="js/app.min.js"></script>
+   </div>
+</body>
+
+</html>

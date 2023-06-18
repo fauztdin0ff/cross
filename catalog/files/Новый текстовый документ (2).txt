@@ -1,0 +1,7 @@
+настройка кеша
+в .htacces добавить:
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 3 months"
+</IfModule>
