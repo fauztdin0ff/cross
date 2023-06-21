@@ -1888,6 +1888,130 @@ main {
 .product-card .rating__value {
   padding-left: 10px;
 }
+/*--------------------------------------------Пагинация---------------------------------------------*/
+.pagination {
+  margin: 35px 0 25px;
+  text-align: center;
+  font-size: 22px;
+  color: #6f7682;
+  font-family: Montserrat;
+  white-space: nowrap;
+}
+@media (max-width: 1200px) {
+  .pagination {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 880));
+  }
+}
+.pagination a {
+  color: inherit;
+  padding: 3px 14px;
+  border-radius: 4px;
+}
+.pagination__prev, .pagination__next {
+  margin: 0 15px;
+  font-size: 30px;
+  color: #333 !important;
+}
+@media (max-width: 1200px) {
+  .pagination__prev, .pagination__next {
+    font-size: calc(26px + 4 * ((100vw - 320px) / 880));
+  }
+}
+.pagination__span {
+  display: inline-block;
+  color: rgb(1, 178, 89);
+  border: 1px solid rgb(1, 178, 89);
+  padding: 3px 14px;
+  border-radius: 4px;
+}
+.pagination__dots {
+  margin: 0 5px;
+}
+
+/*--------------------------------------------Welcome text---------------------------------------------*/
+.welcome {
+  position: relative;
+  padding: 30px 0;
+  background: url("../../img/catalog/morecross.jpg") center/cover no-repeat;
+}
+.welcome__body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(239, 230, 230, 0.937254902);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+@media (max-width: 1000px) {
+  .welcome__body {
+    width: 70%;
+  }
+}
+@media (max-width: 650px) {
+  .welcome__body {
+    width: 80%;
+  }
+}
+.welcome__text {
+  text-align: left;
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+.welcome__text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(239, 230, 230, 0.937254902));
+  z-index: 1;
+}
+.welcome h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+@media (max-width: 1200px) {
+  .welcome h1 {
+    font-size: calc(22px + 18 * ((100vw - 320px) / 880));
+  }
+}
+.welcome p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 1200px) {
+  .welcome p {
+    font-size: calc(16px + 4 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 700px) {
+  .welcome p {
+    line-height: 1.2;
+  }
+}
+.welcome .show-more-btn {
+  background-color: #ff7f50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.welcome .show-more-btn:hover {
+  background-color: #e7744a;
+}
 
 .popup {
   position: fixed;
