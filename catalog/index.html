@@ -5,8 +5,8 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-   <link rel="stylesheet" href="css/nouislider.min.css">
-   <link rel="stylesheet" href="css/style.min.css">
+   <link rel="stylesheet" href="css/nouislider.min.css?_v=20230623133954">
+   <link rel="stylesheet" href="css/style.min.css?_v=20230623133954">
    <title>Каталог</title>
 </head>
 
@@ -29,12 +29,20 @@
             <div class="middle-header__body container">
                <div class="middle-header__logo">
                   <a href="https://crossmag.uz/">
-                     <img src="../img/header/logo.png" alt="crossMag">
+                     <picture>
+                        <source srcset="../img/header/logo.webp" type="image/webp"><img src="../img/header/logo.png"
+                           alt="crossMag">
+                     </picture>
                   </a>
                </div>
                <form action="/search" method="GET" class="middle-header__search">
                   <input type="search" name="q" placeholder="поиск..." tabindex="3">
-                  <button type="submit" tabindex="4"><img src="../img/header/search.png" alt="search"></button>
+                  <button type="submit" tabindex="4">
+                     <picture>
+                        <source srcset="../img/header/search.webp" type="image/webp"><img src="../img/header/search.png"
+                           alt="search">
+                     </picture>
+                  </button>
                </form>
                <div class="middle-header__icons">
                   <div class="middle-header__link">
@@ -71,7 +79,7 @@
                   </div>
                   <nav class="menu__body">
                      <ul class="menu__list">
-                        <li><a href="#" class="menu__link">Главная</a></li>
+                        <li><a href="../index.html" class="menu__link">Главная</a></li>
                         <li><a href="#" class="menu__link active">Каталог</a></li>
                         <li><a href="#" class="menu__link">Оплата</a></li>
                         <li><a href="#" class="menu__link">Доставка</a></li>
@@ -159,7 +167,7 @@
          <div class="catalog">
             <div class="catalog__body container">
                <div class="breadcrumbs">
-                  <a href="/">Главная</a> /
+                  <a href="../index.html">Главная</a> /
                   <span>Каталог</span>
                </div>
                <button id="filterToggleBtn" class="filter-toggle-button">
@@ -186,25 +194,56 @@
 
 
                      <p>Бренд</p>
-                     <ul>
-                        <li>
+                     <ul id="brandlist">
+                        <li class="brandlist-item">
                            <label>
                               <input type="checkbox" name="brand" value="adidas">
                               Adidas
                            </label>
                         </li>
-                        <li>
+                        <li class="brandlist-item">
                            <label>
                               <input type="checkbox" name="brand" value="puma">
                               Puma
                            </label>
                         </li>
-                        <li>
+                        <li class="brandlist-item">
                            <label>
                               <input type="checkbox" name="brand" value="newbalance">
                               New Balance
                            </label>
                         </li>
+                        <li class="brandlist-item">
+                           <label>
+                              <input type="checkbox" name="brand" value="Nike">
+                              Nike
+                           </label>
+                        </li>
+                        <li class="brandlist-item">
+                           <label>
+                              <input type="checkbox" name="brand" value="Reebok">
+                              Reebok
+                           </label>
+                        </li>
+                        <li class="brandlist-item">
+                           <label>
+                              <input type="checkbox" name="brand" value="Lacoste">
+                              Lacoste
+                           </label>
+                        </li>
+                        <li class="brandlist-item">
+                           <label>
+                              <input type="checkbox" name="brand" value="Converse">
+                              Converse
+                           </label>
+                        </li>
+                        <li class="brandlist-item">
+                           <label>
+                              <input type="checkbox" name="brand" value="Air Jordan">
+                              Air Jordan
+                           </label>
+                        </li>
+                        <button id="showMoreBrandButton" class="showMoreBrandButton">еще...</button>
                      </ul>
 
                      <p>Вид обуви</p>
@@ -268,11 +307,11 @@
                   <div class="product__card-items">
                      <div class="product-card">
                         <div class="new-shoe"></div>
-                        <div class="product-card__image" data-image-src="../img/catalog/reebok/reebok1.jpg"
-                           data-additional-images="../img/catalog/reebok/reebok1.jpg,../img/catalog/reebok/reebok2.webp,../img/catalog/reebok/reebok3.webp,../img/catalog/reebok/reebok4.webp,../img/catalog/reebok/reebok5.webp">
+                        <div class="product-card__image" data-image-src="../img/home/reebok1.jpg"
+                           data-additional-images="../img/home/reebok1.jpg,../img/home/reebok2.webp,../img/home/reebok3.webp,../img/home/reebok4.webp,../img/home/reebok5.webp">
                            <picture>
-                              <source srcset="../img/catalog/reebok/reebok1.jpg" type="image/jpg"><img
-                                 src="../img/catalog/reebok/reebok1.jpg" alt="">
+                              <source srcset="../img/home/reebok1.jpg" type="image/webp"><img
+                                 src="../img/home/reebok1.jpg" alt="">
                            </picture>
                         </div>
                         <div class="product-card__body">
@@ -312,11 +351,11 @@
                      </div>
                      <div class="product-card">
                         <div class="new-shoe"></div>
-                        <div class="product-card__image" data-image-src="../img/catalog/other/zig.webp"
-                           data-additional-images="../img/catalog/other/zig.webp,../img/catalog/other/zig3.webp,../img/catalog/other/zig4.webp,../img/catalog/other/zig5.webp">
+                        <div class="product-card__image" data-image-src="../img/home/zig.webp"
+                           data-additional-images="../img/home/zig.webp,../img/home/zig3.webp,../img/home/zig4.webp,../img/home/zig5.webp">
                            <picture>
-                              <source srcset="../img/catalog/other/zig.webp" type="image/webp"><img
-                                 src="../img/catalog/other/zig.webp" alt="">
+                              <source srcset="../img/home/zig.webp" type="image/webp"><img src="../img/home/zig.webp"
+                                 alt="">
                            </picture>
                         </div>
                         <div class="product-card__body">
@@ -356,11 +395,11 @@
                      </div>
                      <div class="product-card">
                         <div class="new-shoe"></div>
-                        <div class="product-card__image" data-image-src="../img/catalog/reebok/reebok1.jpg"
-                           data-additional-images="../img/catalog/reebok/reebok1.jpg,../img/catalog/reebok/reebok2.webp,../img/catalog/reebok/reebok3.webp,../img/catalog/reebok/reebok4.webp,../img/catalog/reebok/reebok5.webp">
+                        <div class="product-card__image" data-image-src="../img/home/reebok1.jpg"
+                           data-additional-images="../img/home/reebok1.jpg,../img/home/reebok2.webp,../img/home/reebok3.webp,../img/home/reebok4.webp,../img/home/reebok5.webp">
                            <picture>
-                              <source srcset="../img/catalog/reebok/reebok1.jpg" type="image/jpg"><img
-                                 src="../img/catalog/reebok/reebok1.jpg" alt="">
+                              <source srcset="../img/home/reebok1.jpg" type="image/webp"><img
+                                 src="../img/home/reebok1.jpg" alt="">
                            </picture>
                         </div>
                         <div class="product-card__body">
@@ -400,55 +439,11 @@
                      </div>
                      <div class="product-card">
                         <div class="new-shoe"></div>
-                        <div class="product-card__image" data-image-src="../img/catalog/other/zig.webp"
-                           data-additional-images="../img/catalog/other/zig.webp,../img/catalog/other/zig3.webp,../img/catalog/other/zig4.webp,../img/catalog/other/zig5.webp">
+                        <div class="product-card__image" data-image-src="../img/home/reebok1.jpg"
+                           data-additional-images="../img/home/reebok1.jpg,../img/home/reebok2.webp,../img/home/reebok3.webp,../img/home/reebok4.webp,../img/home/reebok5.webp">
                            <picture>
-                              <source srcset="../img/catalog/other/zig.webp" type="image/webp"><img
-                                 src="../img/catalog/other/zig.webp" alt="">
-                           </picture>
-                        </div>
-                        <div class="product-card__body">
-                           <div class="product-card__name" data-name="ZIG kinetica 3">
-                              <a href="" class="disabled">ZIG kinetica 3</a>
-                           </div>
-                           <div class="product-card__price" data-price="480 000 сум">
-                              480 000 <span>сум</span>
-                           </div>
-                           <div class="product-card__info">
-                              <div data-ajax="true" class="product-card__rating rating rating_set">
-                                 <div class="rating__body">
-                                    <div class="rating__active"></div>
-                                    <div class="rating__items">
-                                       <input type="radio" class="rating__item" value="1" name="rating">
-                                       <input type="radio" class="rating__item" value="2" name="rating">
-                                       <input type="radio" class="rating__item" value="3" name="rating">
-                                       <input type="radio" class="rating__item" value="4" name="rating">
-                                       <input type="radio" class="rating__item" value="5" name="rating">
-                                    </div>
-                                 </div>
-                                 <div class="rating__value">4.6</div>
-                              </div>
-                              <div class="product-card__stock">
-                                 <p class="in-stock">в наличии</p>
-                                 <p class="out-stock">нет в наличии</p>
-                              </div>
-                              <div class="product-card__sizes" data-unavailable-sizes="44"></div>
-                           </div>
-                           <div class="product-card__buttons">
-                              <a href="#" class="product-card__look _icon-search"
-                                 onclick="event.preventDefault()">смотреть</a>
-                              <a href="#" class="product-card__wishlist"><img src="../img/home/wishlist.svg"
-                                    alt="like"></a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="product-card">
-                        <div class="new-shoe"></div>
-                        <div class="product-card__image" data-image-src="../img/catalog/reebok/reebok1.jpg"
-                           data-additional-images="../img/catalog/reebok/reebok1.jpg,../img/catalog/reebok/reebok2.webp,../img/catalog/reebok/reebok3.webp,../img/catalog/reebok/reebok4.webp,../img/catalog/reebok/reebok5.webp">
-                           <picture>
-                              <source srcset="../img/catalog/reebok/reebok1.jpg" type="image/jpg"><img
-                                 src="../img/catalog/reebok/reebok1.jpg" alt="">
+                              <source srcset="../img/home/reebok1.jpg" type="image/webp"><img
+                                 src="../img/home/reebok1.jpg" alt="">
                            </picture>
                         </div>
                         <div class="product-card__body">
@@ -488,11 +483,55 @@
                      </div>
                      <div class="product-card">
                         <div class="new-shoe"></div>
-                        <div class="product-card__image" data-image-src="../img/catalog/other/zig.webp"
-                           data-additional-images="../img/catalog/other/zig.webp,../img/catalog/other/zig3.webp,../img/catalog/other/zig4.webp,../img/catalog/other/zig5.webp">
+                        <div class="product-card__image" data-image-src="../img/home/reebok1.jpg"
+                           data-additional-images="../img/home/reebok1.jpg,../img/home/reebok2.webp,../img/home/reebok3.webp,../img/home/reebok4.webp,../img/home/reebok5.webp">
                            <picture>
-                              <source srcset="../img/catalog/other/zig.webp" type="image/webp"><img
-                                 src="../img/catalog/other/zig.webp" alt="">
+                              <source srcset="../img/home/reebok1.jpg" type="image/webp"><img
+                                 src="../img/home/reebok1.jpg" alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="Reebok Classic leather">
+                              <a href="" class="disabled">Reebok Classic leather</a>
+                           </div>
+                           <div class="product-card__price" data-price="450 000 сум">
+                              450 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="../img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="../img/home/zig.webp"
+                           data-additional-images="../img/home/zig.webp,../img/home/zig3.webp,../img/home/zig4.webp,../img/home/zig5.webp">
+                           <picture>
+                              <source srcset="../img/home/zig.webp" type="image/webp"><img src="../img/home/zig.webp"
+                                 alt="">
                            </picture>
                         </div>
                         <div class="product-card__body">
@@ -521,6 +560,94 @@
                                  <p class="out-stock">нет в наличии</p>
                               </div>
                               <div class="product-card__sizes" data-unavailable-sizes="44"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="../img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="../img/home/reebok1.jpg"
+                           data-additional-images="../img/home/reebok1.jpg,../img/home/reebok2.webp,../img/home/reebok3.webp,../img/home/reebok4.webp,../img/home/reebok5.webp">
+                           <picture>
+                              <source srcset="../img/home/reebok1.jpg" type="image/webp"><img
+                                 src="../img/home/reebok1.jpg" alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="Reebok Classic leather">
+                              <a href="" class="disabled">Reebok Classic leather</a>
+                           </div>
+                           <div class="product-card__price" data-price="450 000 сум">
+                              450 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
+                           </div>
+                           <div class="product-card__buttons">
+                              <a href="#" class="product-card__look _icon-search"
+                                 onclick="event.preventDefault()">смотреть</a>
+                              <a href="#" class="product-card__wishlist"><img src="../img/home/wishlist.svg"
+                                    alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-card">
+                        <div class="new-shoe"></div>
+                        <div class="product-card__image" data-image-src="../img/home/reebok1.jpg"
+                           data-additional-images="../img/home/reebok1.jpg,../img/home/reebok2.webp,../img/home/reebok3.webp,../img/home/reebok4.webp,../img/home/reebok5.webp">
+                           <picture>
+                              <source srcset="../img/home/reebok1.jpg" type="image/webp"><img
+                                 src="../img/home/reebok1.jpg" alt="">
+                           </picture>
+                        </div>
+                        <div class="product-card__body">
+                           <div class="product-card__name" data-name="Reebok Classic leather">
+                              <a href="" class="disabled">Reebok Classic leather</a>
+                           </div>
+                           <div class="product-card__price" data-price="450 000 сум">
+                              450 000 <span>сум</span>
+                           </div>
+                           <div class="product-card__info">
+                              <div data-ajax="true" class="product-card__rating rating rating_set">
+                                 <div class="rating__body">
+                                    <div class="rating__active"></div>
+                                    <div class="rating__items">
+                                       <input type="radio" class="rating__item" value="1" name="rating">
+                                       <input type="radio" class="rating__item" value="2" name="rating">
+                                       <input type="radio" class="rating__item" value="3" name="rating">
+                                       <input type="radio" class="rating__item" value="4" name="rating">
+                                       <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="rating__value">4.6</div>
+                              </div>
+                              <div class="product-card__stock">
+                                 <p class="in-stock">в наличии</p>
+                                 <p class="out-stock">нет в наличии</p>
+                              </div>
+                              <div class="product-card__sizes" data-unavailable-sizes="41,42"></div>
                            </div>
                            <div class="product-card__buttons">
                               <a href="#" class="product-card__look _icon-search"
@@ -668,7 +795,7 @@
                <nav class="top-footer__nav">
                   <ul class="top-footer__list">
                      <li class="top-footer__link">
-                        <a href="">Главная</a>
+                        <a href="../index.html">Главная</a>
                      </li>
                      <li class="top-footer__link">
                         <a href="">Каталог</a>
@@ -740,8 +867,8 @@
             </div>
          </div>
       </footer>
-      <script src="../js/nouislider.min.js"></script>
-      <script src="../js/app.min.js"></script>
+      <script src="../js/nouislider.min.js?_v=20230623133954"></script>
+      <script src="../js/app.min.js?_v=20230623133954"></script>
    </div>
 </body>
 
