@@ -439,6 +439,7 @@ main {
    -webkit-box-flex: 0;
    -ms-flex: 0 1 40px;
    flex: 0 1 40px;
+   display: none;
 }
 .no-webp .bottom-header__catalog a {
    background: url(../../img/header/menu.png) 7px 50%/11px 11px no-repeat;
@@ -1074,6 +1075,7 @@ main {
    font-size: 15px;
 }
 .breadcrumbs {
+   font-family: Montserrat;
    position: absolute;
    top: 20px;
    left: 10px;
