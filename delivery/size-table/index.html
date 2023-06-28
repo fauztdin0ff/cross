@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+   <link rel="stylesheet" href="css/style.min.css?_v=20230628180144">
+   <title>Таблица размеров</title>
+</head>
+
+<body class="body">
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__top top-header">
+            <div class="top-header__body container">
+               <div class="top-header__links">
+                  <div class="top-header__telephone">
+                     <a href="tel:+998901192620" tabindex="1">+998 90 119 26 20</a>
+                  </div>
+                  <div class="top-header__delivery">
+                     <a href="#" tabindex="2">доставка</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="header__middle middle-header">
+            <div class="middle-header__body container">
+               <div class="middle-header__logo">
+                  <a href="https://crossmag.uz/">
+                     <picture>
+                        <source srcset="../../img/header/logo.webp" type="image/webp"><img
+                           src="../../img/header/logo.png" alt="crossMag">
+                     </picture>
+                  </a>
+               </div>
+               <form action="/search" method="GET" class="middle-header__search">
+                  <input type="search" name="q" placeholder="поиск..." tabindex="3">
+                  <button type="submit" tabindex="4">
+                     <picture>
+                        <source srcset="../../img/header/search.webp" type="image/webp"><img
+                           src="../../img/header/search.png" alt="search">
+                     </picture>
+                  </button>
+               </form>
+               <div class="middle-header__icons">
+                  <div class="middle-header__link">
+                     <a class="wishlist-link" href="" tabindex="5"><img src="../../img/header/wishlist.svg"
+                           alt="Избранное"><span>Избранное</span>
+                        <span class="wishlist-link-circle"></span>
+                     </a>
+                     <span class="middle-header__marq"></span>
+                  </div>
+                  <div class="middle-header__link">
+                     <a class="cart-link" href="#" tabindex="6"><img src="../../img/header/bag.svg"
+                           alt="Корзина"><span>Корзина</span>
+                        <span class="cart-link-circle"></span>
+                     </a>
+                     <span class="middle-header__marq"></span>
+                  </div>
+                  <div class="middle-header__link">
+                     <a class="log-in" href="#" tabindex="7"><img src="../../img/header/account.svg"
+                           alt="Пользователь"><span>Войти</span></a>
+                     <span class="middle-header__marq"></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="header__bottom bottom-header">
+            <div class="bottom-header__body container">
+               <div class="bottom-header__search"></div>
+               <div class="bottom-header__catalog">
+                  <a href="#">подобрать</a>
+               </div>
+               <div class="bottom-header__menu menu">
+                  <div class="menu__icon">
+                     <span></span>
+                  </div>
+                  <nav class="menu__body">
+                     <ul class="menu__list">
+                        <li><a href="#" class="menu__link">Главная</a></li>
+                        <li><a href="#" class="menu__link">Каталог</a></li>
+                        <li><a href="#" class="menu__link">Оплата</a></li>
+                        <li><a href="#" class="menu__link">Доставка</a></li>
+                        <li><a href="#" class="menu__link">О нас</a></li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </div>
+         <div id="cart" class="header__cart cart empty">
+            <div class="cart__body container">
+               <div class="cart__items"></div>
+               <div class="cart__total"></div>
+               <div class="cart__button-close">×</div>
+               <div class="cart__checkout">
+                  <a href="#" class="resume-buy">продолжить покупки</a>
+                  <a href="#" class="go-check _icon-bagicon">оформить заказ</a>
+               </div>
+            </div>
+         </div>
+         <div id="wishlist" class="header__wishlist wishlist">
+            <div class="wishlist__body container">
+               <div class="wishlist__title">Избранное</div>
+               <div class="wishlist__items">
+               </div>
+               <div class="wishlist__button-close">×</div>
+            </div>
+         </div>
+         <!-- Модальное окно -->
+         <div id="login-modal" class="login-modal">
+            <div class="login-modal__content">
+               <div class="login-modal__tabs">
+                  <div class="login-modal__tab" data-tab="tab1">Вход</div>
+                  <div class="login-modal__tab" data-tab="tab2">Регистрация</div>
+               </div>
+               <div id="tab1" class="tab-content tab-login">
+                  <form class="login-modal__form">
+                     <label for="username">Имя пользователя:</label>
+                     <input type="text" id="username" name="username" required>
+                     <label for="password">Пароль:</label>
+                     <input type="password" id="password" name="password" required>
+                     <button type="submit">Войти</button>
+                     <a href="#" class="forgot-password">Забыли пароль?</a>
+                     <a href="#" class="login-google">
+                        <svg viewBox="0 0 46 46" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg"
+                           aria-label="google">
+                           <g fill-rule="nonzero" fill="none">
+                              <path
+                                 d="M9.577 23.156c0-1.504.253-2.946.702-4.299L2.4 12.9A22.958 22.958 0 000 23.156c0 3.686.863 7.162 2.397 10.25l7.875-5.97a13.57 13.57 0 01-.695-4.28"
+                                 fill="#FBBC05"></path>
+                              <path
+                                 d="M23.415 9.476a13.627 13.627 0 018.62 3.05l6.81-6.735c-4.15-3.576-9.47-5.788-15.43-5.788C14.162.003 6.209 5.243 2.4 12.9l7.883 5.959c1.815-5.458 6.99-9.383 13.133-9.383"
+                                 fill="#EA4335"></path>
+                              <path
+                                 d="M23.515 36.532c-6.176 0-11.376-3.9-13.202-9.324L2.395 33.13c3.826 7.609 11.82 12.814 21.12 12.814 5.738 0 11.216-1.994 15.33-5.734l-7.517-5.69c-2.12 1.308-4.791 2.013-7.814 2.013"
+                                 fill="#34A853"></path>
+                              <path
+                                 d="M45.975 22.938c0-1.36-.215-2.824-.535-4.184H23.513v8.89h12.62c-.629 3.031-2.346 5.361-4.804 6.877l7.516 5.69c4.32-3.925 7.13-9.773 7.13-17.273"
+                                 fill="#4285F4"></path>
+                           </g>
+                        </svg>
+                        Войти через Google
+                     </a>
+                  </form>
+               </div>
+               <div id="tab2" class="tab-content tab-register">
+                  <form class="register-modal__form">
+                     <label for="register-username">Имя пользователя:<span>*</span></label>
+                     <input type="text" id="register-username" name="register-username" required>
+                     <label for="email">Email:<span>*</span></label>
+                     <input type="email" id="email" name="email" required>
+                     <label for="register-password">Пароль:<span>*</span></label>
+                     <input type="password" id="register-password" name="register-password" required>
+                     <label for="confirm-password">Подтвердите пароль:<span>*</span></label>
+                     <input type="password" id="confirm-password" name="confirm-password" required>
+                     <button type="submit">Зарегистрироваться</button>
+                  </form>
+               </div>
+
+               <span class="login-modal__close">&times;</span>
+            </div>
+         </div>
+      </header>
+      <main>
+         <div class="breadcrumbs">
+            <a href="../../index.html">Главная</a> &#8250;
+            <a href="../">Оплата и доставка</a> &#8250;
+            <span>Таблица размеров</span>
+         </div>
+         <div class="size-table">
+            <div class="size-table__body container">
+               <div class="size-table__title title">
+                  <h2>Таблица размеров</h2>
+               </div>
+               <table>
+                  <thead>
+                     <tr>
+                        <th>США (USA)</th>
+                        <th>Европа (EUR)</th>
+                        <th>Россия (RU)</th>
+                        <th>Сантиметры (см)</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>6,5</td>
+                        <td>38,5</td>
+                        <td>37,5</td>
+                        <td>24,1</td>
+                     </tr>
+                     <tr>
+                        <td>7</td>
+                        <td>39</td>
+                        <td>38</td>
+                        <td>24,4</td>
+                     </tr>
+                     <tr>
+                        <td>7,5</td>
+                        <td>40</td>
+                        <td>39</td>
+                        <td>24,8</td>
+                     </tr>
+                     <tr>
+                        <td>8</td>
+                        <td>40,5</td>
+                        <td>39,5</td>
+                        <td>25,4</td>
+                     </tr>
+                     <tr>
+                        <td>8,5</td>
+                        <td>41</td>
+                        <td>40</td>
+                        <td>25,7</td>
+                     </tr>
+                     <tr>
+                        <td>9</td>
+                        <td>42</td>
+                        <td>41</td>
+                        <td>26</td>
+                     </tr>
+                     <tr>
+                        <td>9,5</td>
+                        <td>42,5</td>
+                        <td>41,5</td>
+                        <td>26,7</td>
+                     </tr>
+                     <tr>
+                        <td>10</td>
+                        <td>43</td>
+                        <td>42</td>
+                        <td>27</td>
+                     </tr>
+                     <tr>
+                        <td>10,5</td>
+                        <td>44</td>
+                        <td>43</td>
+                        <td>27,3</td>
+                     </tr>
+                     <tr>
+                        <td>11</td>
+                        <td>44,5</td>
+                        <td>43,5</td>
+                        <td>27,9</td>
+                     </tr>
+                     <tr>
+                        <td>11,5</td>
+                        <td>45</td>
+                        <td>44</td>
+                        <td>28,3</td>
+                     </tr>
+                     <tr>
+                        <td>12</td>
+                        <td>46</td>
+                        <td>44,5</td>
+                        <td>28,6</td>
+                     </tr>
+                     <tr>
+                        <td>12,5</td>
+                        <td>46,5</td>
+                        <td>45</td>
+                        <td>-</td>
+                     </tr>
+                     <tr>
+                        <td>13</td>
+                        <td>47</td>
+                        <td>46</td>
+                        <td>29,4</td>
+                     </tr>
+                     <tr>
+                        <td>13,5</td>
+                        <td>48</td>
+                        <td>47</td>
+                        <td>-</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="about-size">
+            <div class="about-size__body container">
+               <div class="about-size__title">
+                  <h6>Как правильно измерить стопу?</h6>
+               </div>
+               <div class="about-size__content">
+                  <div class="text-info">
+                     <p>Для того чтобы верно измерить ногу и обеспечить себя комфортной покупкой, необходимо:</p>
+                     <ul>
+                        <li>Встать ногами на бумагу и обвести по контуру.</li>
+                        <li>Измеряем расстояние между самыми удаленными точками.</li>
+                        <li>Записать полученные данные и обратиться к соответствующей таблице.</li>
+                        <p>Это и будет мужской размер обуви в сантиметрах.</p>
+                     </ul>
+                  </div>
+                  <div class="image-info">
+                     <picture>
+                        <source srcset="../../img/delivery/size.webp" type="image/webp"><img
+                           src="../../img/delivery/size.jpg" alt="size">
+                     </picture>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+         <div id="popup" class="popup">
+            <div class="popup__content">
+               <div class="popup__gallery">
+                  <img class="popup__image" src="" alt="Product Image">
+                  <div class="popup__images-container"></div>
+               </div>
+               <div class="popup__info">
+                  <h3 class="popup__name"></h3>
+                  <p class="popup__price"></p>
+                  <div class="product-card__stock">
+                     <p class="in-stock">в наличии</p>
+                     <p class="out-stock">нет в наличии</p>
+                  </div>
+                  <div class="popup__size">
+                     <label>Размер:</label>
+                     <div class="radio-group">
+                        <input type="radio" id="size-39" name="shoe-size" value="39">
+                        <label for="size-39">39</label>
+                        <input type="radio" id="size-40" name="shoe-size" value="40">
+                        <label for="size-40">40</label>
+                        <input type="radio" id="size-41" name="shoe-size" value="41">
+                        <label for="size-41">41</label>
+                        <input type="radio" id="size-42" name="shoe-size" value="42">
+                        <label for="size-42">42</label>
+                        <input type="radio" id="size-43" name="shoe-size" value="43">
+                        <label for="size-43">43</label>
+                        <input type="radio" id="size-44" name="shoe-size" value="44">
+                        <label for="size-44">44</label>
+                     </div>
+                  </div>
+                  <div class="popup__unavailable-sizes" data-unavailable-sizes=""></div>
+                  <div class="popup__quantity" data-selected-quantity="1">
+                     <p>Количество:</p>
+                     <div class="quantity-wrapper">
+                        <span class="minus">-</span>
+                        <input type="number" class="quantity-input" id="quantity" name="quantity" min="1" max="10"
+                           value="1">
+                        <span class="plus">+</span>
+                     </div>
+                  </div>
+                  <div class="popup__additional-size size-additional" data-selected-additional-size="none">
+                     <div class="size-additional__body">
+                        <div class="size-additional__text">
+                           <p>Дополнительный размер</p>
+                        </div>
+                        <div class="size-additional__switch switch">
+                           <input type="radio" id="switch-on" name="switch" class="switch__input">
+                           <label for="switch-off" class="switch__label"></label>
+                           <input type="radio" id="switch-off" name="switch" class="switch__input">
+                           <label for="switch-on" class="switch__label"></label>
+                           <div class="switch__handle"></div>
+                        </div>
+                     </div>
+                     <div class="size-additional__value">
+                        <div class="radio-group">
+                           <input type="radio" id="add-size-39" name="add-size" value="39">
+                           <label for="add-size-39">39</label>
+                           <input type="radio" id="add-size-40" name="add-size" value="40">
+                           <label for="add-size-40">40</label>
+                           <input type="radio" id="add-size-41" name="add-size" value="41">
+                           <label for="add-size-41">41</label>
+                           <input type="radio" id="add-size-42" name="add-size" value="42">
+                           <label for="add-size-42">42</label>
+                           <input type="radio" id="add-size-43" name="add-size" value="43">
+                           <label for="add-size-43">43</label>
+                           <input type="radio" id="add-size-44" name="add-size" value="44">
+                           <label for="add-size-44">44</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="product-card__buttons">
+                     <a href="#" class="product-card__bag _icon-bagicon" disabled>в корзину</a>
+                     <a href="#" class="product-card__wishlist"><img src="../../img/home/wishlist.svg" alt="like"></a>
+                  </div>
+                  <div class="popup__go-cart">
+                     <a href="#" class="go-cart">открыть корзину</a>
+                  </div>
+               </div>
+               <button class="popup__close">×</button>
+            </div>
+         </div>
+         <div class="fullscreen">
+         </div>
+         <button class="call-centre">
+            <svg class="b24-crm-button-icon b24-crm-button-icon-active" width="28" height="29"
+               xmlns="http://www.w3.org/2000/svg">
+               <path class="b24-crm-button-chat-icon"
+                  d="M25.99 7.744a2 2 0 012 2v11.49a2 2 0 01-2 2h-1.044v5.162l-4.752-5.163h-7.503a2 2 0 01-2-2v-1.872h10.073a3 3 0 003-3V7.744zM19.381 0a2 2 0 012 2v12.78a2 2 0 01-2 2h-8.69l-5.94 6.453V16.78H2a2 2 0 01-2-2V2a2 2 0 012-2h17.382z"
+                  fill=" #FFFFFF" fill-rule="evenodd"></path>
+            </svg>
+         </button>
+         <button class="scroll-to-top"></button>
+      </main>
+      <footer class="footer">
+         <div class="footer__body container">
+            <div class="footer__top top-footer">
+               <nav class="top-footer__nav">
+                  <ul class="top-footer__list">
+                     <li class="top-footer__link">
+                        <a href="">Главная</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Каталог</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Оплата и доставка</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Возврат</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Вопрос-ответ</a>
+                     </li>
+                  </ul>
+                  <ul class="top-footer__list">
+                     <li class="top-footer__link">
+                        <a href="">Новинки</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Бренды</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Топ продаж</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Размерная сетка</a>
+                     </li>
+                  </ul>
+               </nav>
+               <div class="top-footer__socials">
+                  <p>© Магазин crossMAG</p>
+                  <div class="top-footer__social-links">
+                     <div class="top-footer__social-link">
+                        <a href="">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#0088CC"
+                              class="telegram" viewBox="0 0 16 16">
+                              <path
+                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="top-footer__social-link">
+                        <a href="">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="url(#instagramGradient)"
+                              class="instagram" viewBox="0 0 16 16">
+                              <defs>
+                                 <linearGradient id="instagramGradient" gradientTransform="rotate(45)">
+                                    <stop offset="0%" stop-color="#833AB4" />
+                                    <stop offset="100%" stop-color="#DD2A7B" />
+                                 </linearGradient>
+                              </defs>
+                              <path
+                                 d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                           </svg>
+
+                        </a>
+                     </div>
+                  </div>
+                  <div class="top-footer__telephone">
+                     <a href="">+998 90 119 26 20</a>
+                  </div>
+               </div>
+            </div>
+            <div class="footer__bottom bottom-footer">
+               <div class="bottom-footer__text">
+                  <p>crossMAG 2023. All right reserved</p>
+                  <a href="" class="bottom-footer__link">Политика конфиденциальности</a>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="../../js/app.min.js?_v=20230628180144"></script>
+   </div>
+</body>
+
+</html>
