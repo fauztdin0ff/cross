@@ -1281,7 +1281,6 @@ main {
    margin-bottom: 15px;
    width: 80%;
    color: #6f7682;
-   font-style: italic;
 }
 @media (max-width: 767px) {
    .return__list li {
