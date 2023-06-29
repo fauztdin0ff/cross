@@ -1096,7 +1096,7 @@ table {
 }
 thead tr:first-child:hover {
    background-color: #01b259;
-   color: #333;
+   color: #000;
    font-size: 16px;
 }
 td,
@@ -1104,7 +1104,6 @@ th {
    border: 1px solid #000;
    padding: 6px;
    text-align: center;
-   color: #333;
 }
 th {
    background-color: #f2f2f2;
