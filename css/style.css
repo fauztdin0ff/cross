@@ -178,11 +178,10 @@ body._lock::after {
   animation: bodyShadow 0.3s linear 0s;
 }
 
-body._popup {
-  overflow: hidden;
-}
-
-body._popup2 {
+body._cart,
+body._popup,
+body._popup2,
+body.filter {
   overflow: hidden;
 }
 
@@ -731,30 +730,6 @@ main {
   background-color: #108740;
 }
 
-.cart__button-close {
-  font-size: 50px;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  background-color: #ccc;
-  color: #1d1d1d;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 50%;
-}
-
 .wishlist {
   position: fixed;
   top: 0;
@@ -875,7 +850,8 @@ main {
   fill: #d74444;
 }
 
-.wishlist__button-close {
+.wishlist__button-close,
+.cart__button-close {
   font-size: 50px;
   position: fixed;
   top: 20px;
@@ -892,11 +868,12 @@ main {
   text-align: center;
   width: 50px;
   height: 50px;
-  background-color: #ccc;
-  color: #1d1d1d;
+  background-color: rgba(204, 204, 204, 0.641);
+  color: #fff;
   cursor: pointer;
   padding: 5px;
   border-radius: 50%;
+  font-family: Montserrat;
 }
 
 .login-modal {
@@ -1792,6 +1769,7 @@ main {
 
 .no-webp .news-slider-btn-prev {
   background: url("../img/home/prevbtn.png") center/20px no-repeat;
+  background-color: rgb(79, 79, 79);
 }
 
 .news-slider-btn-prev {
@@ -1801,6 +1779,7 @@ main {
 
 .no-webp .news-slider-btn-next {
   background: url("../img/home/nextbtn.png") center/20px no-repeat;
+  background-color: rgb(79, 79, 79);
 }
 
 .news-slider-btn-next {
@@ -3030,16 +3009,15 @@ main {
     align-items: center;
   }
 
+  .wishlist__button-close,
   .cart__button-close {
     top: 10px;
     right: 10px;
     font-size: 40px;
-  }
-
-  .wishlist__button-close {
-    top: 10px;
-    right: 10px;
-    font-size: 40px;
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    padding: 0;
   }
 
   .product-card__image::after {
@@ -3470,19 +3448,12 @@ main {
     margin-top: 0;
   }
 
+  .wishlist__button-close,
   .cart__button-close {
     top: 5px;
     right: 5px;
-    width: 35px;
-    height: 35px;
-    padding: 3px;
-  }
-
-  .wishlist__button-close {
-    top: 5px;
-    right: 5px;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     padding: 3px;
   }
 
@@ -3563,10 +3534,12 @@ main {
 
 .webp .news-slider-btn-prev {
   background: url(../img/home/prevbtn.webp) center/20px no-repeat;
+  background-color: rgba(79, 79, 79, 0.6);
 }
 
 .webp .news-slider-btn-next {
   background: url(../img/home/nextbtn.webp) center/20px no-repeat;
+  background-color: rgba(79, 79, 79, 0.6);
 }
 
 .webp .fullscreen {

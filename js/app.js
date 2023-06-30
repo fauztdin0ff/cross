@@ -570,7 +570,7 @@ function openCart() {
   var body = document.querySelector("body");
 
   cart.style.display = "flex";
-  body.classList.add("_popup");
+  body.classList.add("_cart");
 }
 
 // Функция для закрытия корзины
@@ -579,7 +579,7 @@ function closeCart() {
   var body = document.querySelector("body");
 
   cart.style.display = "none";
-  body.classList.remove("_popup");
+  body.classList.remove("_cart");
 }
 
 /*--------------------------------------------в корзину---------------------------------------------*/
@@ -1203,6 +1203,18 @@ if (brandList) {
       });
     });
   }
+}
+
+/*--------------------------------------------Ссылки из футера с выбором сортировки---------------------------------------------*/
+// Получаем значение параметра "option" из URL-адреса
+var urlParams = new URLSearchParams(window.location.search);
+var optionValue = urlParams.get('option');
+
+// Проверяем наличие urlParams и optionValue
+if (urlParams && optionValue) {
+  // Устанавливаем выбранное значение в элементе выбора (select)
+  var selectElement = document.getElementById('sort');
+  selectElement.value = optionValue;
 }
 
 
