@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+   <link rel="stylesheet" href="css/style.min.css">
+   <link rel="stylesheet" href="css/checkout.css">
+   <title>Таблица размеров</title>
+</head>
+
+<body class="body">
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__top top-header">
+            <div class="top-header__body container">
+               <div class="top-header__links">
+                  <div class="top-header__telephone">
+                     <a href="tel:+998901192620" tabindex="1">+998 90 119 26 20</a>
+                  </div>
+                  <div class="top-header__delivery">
+                     <a href="#" tabindex="2">доставка</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="header__middle middle-header">
+            <div class="middle-header__body container">
+               <div class="middle-header__logo">
+                  <a href="https://crossmag.uz/">
+                     <img src="img/header/logo.png" alt="crossMag">
+                  </a>
+               </div>
+               <form action="/search" method="GET" class="middle-header__search">
+                  <input type="search" name="q" placeholder="поиск..." tabindex="3">
+                  <button type="submit" tabindex="4"><img src="img/header/search.png" alt="search"></button>
+               </form>
+               <div class="middle-header__icons">
+                  <div class="middle-header__link">
+                     <a class="wishlist-link" href="" tabindex="5"><img src="img/header/wishlist.svg"
+                           alt="Избранное"><span>Избранное</span>
+                        <span class="wishlist-link-circle"></span>
+                     </a>
+                     <span class="middle-header__marq"></span>
+                  </div>
+                  <div class="middle-header__link">
+                     <a class="cart-link" href="#" tabindex="6"><img src="img/header/bag.svg"
+                           alt="Корзина"><span>Корзина</span>
+                        <span class="cart-link-circle"></span>
+                     </a>
+                     <span class="middle-header__marq"></span>
+                  </div>
+                  <div class="middle-header__link">
+                     <a class="log-in" href="#" tabindex="7"><img src="img/header/account.svg"
+                           alt="Пользователь"><span>Войти</span></a>
+                     <span class="middle-header__marq"></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="header__bottom bottom-header">
+            <div class="bottom-header__body container">
+               <div class="bottom-header__search"></div>
+               <div class="bottom-header__catalog">
+                  <a href="#">подобрать</a>
+               </div>
+               <div class="bottom-header__menu menu">
+                  <div class="menu__icon">
+                     <span></span>
+                  </div>
+                  <nav class="menu__body">
+                     <ul class="menu__list">
+                        <li><a href="#" class="menu__link">Главная</a></li>
+                        <li><a href="#" class="menu__link">Каталог</a></li>
+                        <li><a href="#" class="menu__link">Оплата</a></li>
+                        <li><a href="#" class="menu__link">Доставка</a></li>
+                        <li><a href="#" class="menu__link">О нас</a></li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </div>
+         <div id="cart" class="header__cart cart empty">
+            <div class="cart__body container">
+               <div class="cart__items"></div>
+               <div class="cart__total"></div>
+               <div class="cart__button-close">×</div>
+               <div class="cart__checkout">
+                  <a href="#" class="resume-buy">продолжить покупки</a>
+                  <a href="#" class="go-check _icon-bagicon">оформить заказ</a>
+               </div>
+            </div>
+         </div>
+         <div id="wishlist" class="header__wishlist wishlist">
+            <div class="wishlist__body container">
+               <div class="wishlist__title">Избранное</div>
+               <div class="wishlist__items">
+               </div>
+               <div class="wishlist__button-close">×</div>
+            </div>
+         </div>
+         <!-- Модальное окно -->
+         <div id="login-modal" class="login-modal">
+            <div class="login-modal__content">
+               <div class="login-modal__tabs">
+                  <div class="login-modal__tab" data-tab="tab1">Вход</div>
+                  <div class="login-modal__tab" data-tab="tab2">Регистрация</div>
+               </div>
+               <div id="tab1" class="tab-content tab-login">
+                  <form class="login-modal__form">
+                     <label for="username">Имя пользователя:</label>
+                     <input type="text" id="username" name="username" required>
+                     <label for="password">Пароль:</label>
+                     <input type="password" id="password" name="password" required>
+                     <button type="submit">Войти</button>
+                     <a href="#" class="forgot-password">Забыли пароль?</a>
+                     <a href="#" class="login-google">
+                        <svg viewBox="0 0 46 46" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg"
+                           aria-label="google">
+                           <g fill-rule="nonzero" fill="none">
+                              <path
+                                 d="M9.577 23.156c0-1.504.253-2.946.702-4.299L2.4 12.9A22.958 22.958 0 000 23.156c0 3.686.863 7.162 2.397 10.25l7.875-5.97a13.57 13.57 0 01-.695-4.28"
+                                 fill="#FBBC05"></path>
+                              <path
+                                 d="M23.415 9.476a13.627 13.627 0 018.62 3.05l6.81-6.735c-4.15-3.576-9.47-5.788-15.43-5.788C14.162.003 6.209 5.243 2.4 12.9l7.883 5.959c1.815-5.458 6.99-9.383 13.133-9.383"
+                                 fill="#EA4335"></path>
+                              <path
+                                 d="M23.515 36.532c-6.176 0-11.376-3.9-13.202-9.324L2.395 33.13c3.826 7.609 11.82 12.814 21.12 12.814 5.738 0 11.216-1.994 15.33-5.734l-7.517-5.69c-2.12 1.308-4.791 2.013-7.814 2.013"
+                                 fill="#34A853"></path>
+                              <path
+                                 d="M45.975 22.938c0-1.36-.215-2.824-.535-4.184H23.513v8.89h12.62c-.629 3.031-2.346 5.361-4.804 6.877l7.516 5.69c4.32-3.925 7.13-9.773 7.13-17.273"
+                                 fill="#4285F4"></path>
+                           </g>
+                        </svg>
+                        Войти через Google
+                     </a>
+                  </form>
+               </div>
+               <div id="tab2" class="tab-content tab-register">
+                  <form class="register-modal__form">
+                     <label for="register-username">Имя пользователя:<span>*</span></label>
+                     <input type="text" id="register-username" name="register-username" required>
+                     <label for="email">Email:<span>*</span></label>
+                     <input type="email" id="email" name="email" required>
+                     <label for="register-password">Пароль:<span>*</span></label>
+                     <input type="password" id="register-password" name="register-password" required>
+                     <label for="confirm-password">Подтвердите пароль:<span>*</span></label>
+                     <input type="password" id="confirm-password" name="confirm-password" required>
+                     <button type="submit">Зарегистрироваться</button>
+                  </form>
+               </div>
+
+               <span class="login-modal__close">&times;</span>
+            </div>
+         </div>
+      </header>
+      <main>
+         <div class="checkout">
+            <div class="checkout__body container">
+               <div class="checkout__title title">
+                  <h2>Оформить покупку</h2>
+               </div>
+               <div class="checkout__content">
+                  <div class="checkout__forms">
+                     <div class="checkout__form account-form">
+                        <!--ФИО-->
+                        <div class="title">
+                           <p>Ваши данные</p>
+                        </div>
+                        <div class="account-form__telephone">
+                           <input type="tel" placeholder="Номер телефона" id="telephone" value="+998 " maxlength="17"
+                              required>
+                           <label for="telephone" class="account-form__telephone_label">Номер телефона
+                              <span>*</span></label>
+                        </div>
+                        <div class="account-form__person">
+                           <div class="account-form__name">
+                              <input type="text" placeholder="Имя" maxlength="17" required>
+                              <label for="telephone" class="account-form__telephone_label">Имя <span>*</span></label>
+                           </div>
+                           <div class="account-form__lastname">
+                              <input type="text" placeholder="Фамилия" maxlength="17" required>
+                              <label for="telephone" class="account-form__telephone_label">Фамилия
+                                 <span>*</span></label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="checkout__form pay-form">
+                        <!--Способ оплаты-->
+                        <div class="title">
+                           <p>Выберите способ оплаты</p>
+                        </div>
+                        <div class="pay-form__methods">
+                           <div class="pay-form__method active">
+                              <svg width="25" height="25" viewBox="0 0 1024 1024">
+                                 <g transform="scale(1)">
+                                    <path
+                                       d="M928 128h-832c-52.8 0-96 43.2-96 96v576c0 52.8 43.2 96 96 96h832c52.8 0 96-43.2 96-96v-576c0-52.8-43.2-96-96-96zM96 192h832c17.346 0 32 14.654 32 32v96h-896v-96c0-17.346 14.654-32 32-32zM928 832h-832c-17.346 0-32-14.654-32-32v-288h896v288c0 17.346-14.654 32-32 32zM128 640h64v128h-64zM256 640h64v128h-64zM384 640h64v128h-64z">
+                                    </path>
+                                 </g>
+                              </svg>
+                              Картой
+                           </div>
+                           <div class="pay-form__method">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 version="1.1" width="24" height="24" viewBox="0 0 32 32" data-tags="wallet,money,cash">
+                                 <g fill="#444" transform="scale(0.03125 0.03125)">
+                                    <path
+                                       d="M512 640c0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64-35.346 0-64-28.654-64-64zM928.032 416c-0.032 0-0.032 0 0 0l-0.032-192v-16-80c0-53.024-43.008-96-96-96h-128-528c-97.056 0-176 78.976-176 176v640c0 97.024 78.944 176 176 176h576c97.024 0 176-78.976 176-176v-48c0 0 0 0 0.032 0 127.936-96.032 127.936-287.968 0-384zM176 96h656c17.632 0 32 14.336 32 32v80 16 101.888c-10.048-3.584-20.736-5.888-32-5.888h-0.032v-32-64-64c0-17.696-14.336-32-32-32h-672c-17.664 0-32 14.304-32 32v64 62.176c-19.744-20.192-31.968-47.712-31.968-78.176 0-61.856 50.112-112 112-112zM799.968 192h-672l0-32h672v32zM799.968 224v32h-672l0-32h672zM799.968 288v32h-623.968c-17.28 0-33.408-4.224-48-11.2v-20.8h671.968zM864 848c0 61.856-50.144 112-112 112h-576c-61.888 0-112-50.144-112-112v-504.352c30.432 25.184 69.472 40.352 112 40.352h528 128c17.632 0 32 14.336 32 32v64h-288c-88.384 0-160 71.616-160 160s71.648 160 160 160h288v48zM904.864 736h-328.864c-52.928 0-96-43.072-96-96s43.072-96 96-96h288c19.744-0.256 39.328-9.824 51.264-25.728 3.328-4.48 5.92-9.504 8-14.752 0.288-0.704 0.8-1.248 1.056-1.984 23.008 30.176 35.68 67.168 35.68 106.464 0 49.216-19.872 94.88-55.136 128z" />
+                                 </g>
+                              </svg>
+                              Наличными
+                           </div>
+                        </div>
+                        <div class="pay-form__card">
+                           <div class="payme">
+                              <input type="radio" id="paymeButton" name="payment" value="payme" checked>
+                              <label for="paymeButton">
+                                 <img src="img/home/payme.webp" alt="payme">
+                              </label>
+                           </div>
+                           <div class="click">
+                              <input type="radio" id="clickButton" name="payment" value="click">
+                              <label for="clickButton">
+                                 <img src="img/home/click.webp" alt="click">
+                              </label>
+                           </div>
+                        </div>
+                        <div class="pay-form__cash">
+                           <span>✔</span> Наличный способ оплаты при получении товара
+                        </div>
+                     </div>
+                     <div class="checkout__form delivery-form">
+                        <!--Адресс доставки-->
+                        <div class="title">
+                           <p>Укажите ваш адрес</p>
+                        </div>
+                        <div class="delivery-form__tabs">
+                           <label class="delivery-form__tab active">
+                              <input type="radio" name="city" id="tashkent-radio" checked> Ташкент
+                           </label>
+                           <label class="delivery-form__tab">
+                              <input type="radio" name="city" id="other-radio"> Другой
+                           </label>
+                        </div>
+
+                        <div id="tashkent-city" class="city-container">
+                           <form>
+                              <div class="city-and-area">
+                                 <div class="choose-city">
+                                    <label for="city-select">Город: <span>*</span></label>
+                                    <select id="city-select" name="city-select" class="button-input" disabled>
+                                       <option value="Юнусабадский">Ташкент</option>
+                                    </select><br>
+                                 </div>
+                                 <div class="choose-area">
+                                    <label for="district-select">Район: <span>*</span></label>
+
+                                    <select id="district-select" name="district-select" class="button-input">
+                                       <option value="Бектемирский">Бектемирский</option>
+                                       <option value="Мирзо-Улугбекский">Мирзо-Улугбекский</option>
+                                       <option value="Мирабадский">Мирабадский</option>
+                                       <option value="Алмазарский">Алмазарский</option>
+                                       <option value="Сергелийский">Сергелийский</option>
+                                       <option value="Учтепинский">Учтепинский</option>
+                                       <option value="Яшнободский">Яшнободский</option>
+                                       <option value="Чиланзарский">Чиланзарский</option>
+                                       <option value="Шайхонтохурский">Шайхонтохурский</option>
+                                       <option value="Юнусабадский">Юнусабадский</option>
+                                       <option value="Юнусабадский">Юнусабадский</option>
+                                       <option value="Яккасарайский">Яккасарайский</option>
+                                       <option value="Янгихаетский">Янгихаетский</option>
+                                    </select>
+                                 </div>
+                              </div>
+                              <div class="address-info">
+                                 <div class="choose-adress">
+                                    <input type="text" placeholder="Ваш адрес" id="address" maxlength="25" required>
+                                    <label for="address" class="address__label">Ваш адрес
+                                       <span>*</span></label>
+                                 </div>
+                                 <div class="choose-appartment-number">
+                                    <input type="text" placeholder="Номер дома" id="home-number" required>
+                                    <label for="home-number" class="home__label">Дом
+                                       <span>*</span></label>
+                                 </div>
+                              </div>
+                           </form>
+
+                        </div>
+                        <div id="other-city" class="city-container">
+                           Скоро...
+                        </div>
+                     </div>
+                     <div class="checkout__form time-form">
+                        <div class="title">
+                           <p>Удобное время для доставки</p>
+                        </div>
+
+                        <div class="delivery-time">
+                           <div class="clock">
+                              <div class="from">
+                                 C : <input type="time" id="delivery-from" name="delivery-from">
+                              </div>
+                              <div class="to">
+                                 До : <input type="time" id="delivery-to" name="delivery-to">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="pay-check-button">
+                        <button type="submit">Оформить покупку</button>
+                     </div>
+                  </div>
+                  <div class="checkout__info">
+                     <p style="text-align: center;margin-top:25px;">Ваши товары</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div id="popup" class="popup">
+            <div class="popup__content">
+               <div class="popup__gallery">
+                  <img class="popup__image" src="" alt="Product Image">
+                  <div class="popup__images-container"></div>
+               </div>
+               <div class="popup__info">
+                  <h3 class="popup__name"></h3>
+                  <p class="popup__price"></p>
+                  <div class="product-card__stock">
+                     <p class="in-stock">в наличии</p>
+                     <p class="out-stock">нет в наличии</p>
+                  </div>
+                  <div class="popup__size">
+                     <label>Размер:</label>
+                     <div class="radio-group">
+                        <input type="radio" id="size-39" name="shoe-size" value="39">
+                        <label for="size-39">39</label>
+                        <input type="radio" id="size-40" name="shoe-size" value="40">
+                        <label for="size-40">40</label>
+                        <input type="radio" id="size-41" name="shoe-size" value="41">
+                        <label for="size-41">41</label>
+                        <input type="radio" id="size-42" name="shoe-size" value="42">
+                        <label for="size-42">42</label>
+                        <input type="radio" id="size-43" name="shoe-size" value="43">
+                        <label for="size-43">43</label>
+                        <input type="radio" id="size-44" name="shoe-size" value="44">
+                        <label for="size-44">44</label>
+                     </div>
+                  </div>
+                  <div class="popup__unavailable-sizes" data-unavailable-sizes=""></div>
+                  <div class="popup__quantity" data-selected-quantity="1">
+                     <p>Количество:</p>
+                     <div class="quantity-wrapper">
+                        <span class="minus">-</span>
+                        <input type="number" class="quantity-input" id="quantity" name="quantity" min="1" max="10"
+                           value="1">
+                        <span class="plus">+</span>
+                     </div>
+                  </div>
+                  <div class="popup__additional-size size-additional" data-selected-additional-size="none">
+                     <div class="size-additional__body">
+                        <div class="size-additional__text">
+                           <p>Дополнительный размер</p>
+                        </div>
+                        <div class="size-additional__switch switch">
+                           <input type="radio" id="switch-on" name="switch" class="switch__input">
+                           <label for="switch-off" class="switch__label"></label>
+                           <input type="radio" id="switch-off" name="switch" class="switch__input">
+                           <label for="switch-on" class="switch__label"></label>
+                           <div class="switch__handle"></div>
+                        </div>
+                     </div>
+                     <div class="size-additional__value">
+                        <div class="radio-group">
+                           <input type="radio" id="add-size-39" name="add-size" value="39">
+                           <label for="add-size-39">39</label>
+                           <input type="radio" id="add-size-40" name="add-size" value="40">
+                           <label for="add-size-40">40</label>
+                           <input type="radio" id="add-size-41" name="add-size" value="41">
+                           <label for="add-size-41">41</label>
+                           <input type="radio" id="add-size-42" name="add-size" value="42">
+                           <label for="add-size-42">42</label>
+                           <input type="radio" id="add-size-43" name="add-size" value="43">
+                           <label for="add-size-43">43</label>
+                           <input type="radio" id="add-size-44" name="add-size" value="44">
+                           <label for="add-size-44">44</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="product-card__buttons">
+                     <a href="#" class="product-card__bag _icon-bagicon" disabled>в корзину</a>
+                     <a href="#" class="product-card__wishlist"><img src="img/home/wishlist.svg" alt="like"></a>
+                  </div>
+                  <div class="popup__go-cart">
+                     <a href="#" class="go-cart">открыть корзину</a>
+                  </div>
+               </div>
+               <button class="popup__close">×</button>
+            </div>
+         </div>
+         <div class="fullscreen">
+         </div>
+         <button class="call-centre">
+            <svg class="b24-crm-button-icon b24-crm-button-icon-active" width="28" height="29"
+               xmlns="http://www.w3.org/2000/svg">
+               <path class="b24-crm-button-chat-icon"
+                  d="M25.99 7.744a2 2 0 012 2v11.49a2 2 0 01-2 2h-1.044v5.162l-4.752-5.163h-7.503a2 2 0 01-2-2v-1.872h10.073a3 3 0 003-3V7.744zM19.381 0a2 2 0 012 2v12.78a2 2 0 01-2 2h-8.69l-5.94 6.453V16.78H2a2 2 0 01-2-2V2a2 2 0 012-2h17.382z"
+                  fill=" #FFFFFF" fill-rule="evenodd"></path>
+            </svg>
+         </button>
+         <button class="scroll-to-top"></button>
+      </main>
+      <footer class="footer">
+         <div class="footer__body container">
+            <div class="footer__top top-footer">
+               <nav class="top-footer__nav">
+                  <ul class="top-footer__list">
+                     <li class="top-footer__link">
+                        <a href="">Главная</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Каталог</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Оплата и доставка</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Возврат</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Вопрос-ответ</a>
+                     </li>
+                  </ul>
+                  <ul class="top-footer__list">
+                     <li class="top-footer__link">
+                        <a href="">Новинки</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Бренды</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="catalog/index.html?option=price-exp">Топ продаж</a>
+                     </li>
+                     <li class="top-footer__link">
+                        <a href="">Размерная сетка</a>
+                     </li>
+                  </ul>
+               </nav>
+               <div class="top-footer__socials">
+                  <p>© Магазин crossMAG</p>
+                  <div class="top-footer__social-links">
+                     <div class="top-footer__social-link">
+                        <a href="">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#0088CC"
+                              class="telegram" viewBox="0 0 16 16">
+                              <path
+                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="top-footer__social-link">
+                        <a href="">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="url(#instagramGradient)"
+                              class="instagram" viewBox="0 0 16 16">
+                              <defs>
+                                 <linearGradient id="instagramGradient" gradientTransform="rotate(45)">
+                                    <stop offset="0%" stop-color="#833AB4" />
+                                    <stop offset="100%" stop-color="#DD2A7B" />
+                                 </linearGradient>
+                              </defs>
+                              <path
+                                 d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                           </svg>
+
+                        </a>
+                     </div>
+                  </div>
+                  <div class="top-footer__telephone">
+                     <a href="">+998 90 119 26 20</a>
+                  </div>
+               </div>
+            </div>
+            <div class="footer__bottom bottom-footer">
+               <div class="bottom-footer__text">
+                  <p>crossMAG 2023. All right reserved</p>
+                  <a href="" class="bottom-footer__link">Политика конфиденциальности</a>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="js/app.min.js"></script>
+      <script src="js/checkout.js"></script>
+   </div>
+</body>
+
+</html>
