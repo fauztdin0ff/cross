@@ -1,0 +1,501 @@
+/*---------------------------------------------Оформление заказа--------------------------------------------*/
+.checkout {
+   font-family: Montserrat;
+}
+.checkout__body {
+   padding: 40px 0;
+}
+.checkout__title {
+   margin-bottom: 30px;
+}
+.checkout__content {
+   display: flex;
+}
+@media (max-width: 767px) {
+   .checkout__content {
+      flex-direction: column;
+   }
+}
+.checkout__forms {
+   flex: 0 1 60%;
+   padding: 15px;
+}
+.checkout__forms .title {
+   margin-bottom: 30px;
+}
+.checkout__forms .title p {
+   position: relative;
+   font-family: Montserrat;
+   font-size: 18px;
+   padding-left: 30px;
+   font-weight: 500;
+}
+@media (max-width: 1200px) {
+   .checkout__forms .title p {
+      font-size: calc(14px + 4 * ((100vw - 320px) / 880));
+   }
+}
+.checkout__forms .title p::before {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background-color: rgb(1, 178, 89);
+   position: absolute;
+   left: 0;
+   top: 50%;
+   transform: translateY(-50%);
+   color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 13px;
+   font-weight: 700;
+}
+.checkout__form {
+   margin-bottom: 25px;
+}
+.checkout__info {
+   flex: 0 1 40%;
+   border: 1px solid hsla(240deg, 1%, 65%, 0.396);
+   border-radius: 10px;
+}
+
+.account-form p::before {
+   content: "1";
+}
+.account-form__telephone,
+.account-form__name,
+.account-form__lastname {
+   position: relative;
+}
+.account-form__telephone input,
+.account-form__name input,
+.account-form__lastname input {
+   border: 1px solid hsla(240deg, 1%, 65%, 0.396);
+   border-radius: 6px;
+   padding: 10px 15px;
+   font-family: Montserrat;
+   width: 100%;
+   margin-bottom: 20px;
+}
+.account-form__telephone input::placeholder,
+.account-form__name input::placeholder,
+.account-form__lastname input::placeholder {
+   opacity: 0;
+}
+.account-form__telephone input + label,
+.account-form__name input + label,
+.account-form__lastname input + label {
+   position: absolute;
+   left: 10px;
+   pointer-events: none;
+   transition: 0.2s;
+   transform-origin: top left;
+   padding: 0.25em;
+   font-size: 13px;
+   color: #6f7682;
+}
+.account-form__telephone label,
+.account-form__name label,
+.account-form__lastname label {
+   top: 5px;
+}
+.account-form__telephone input:focus + label,
+.account-form__telephone input:not(:placeholder-shown) + label,
+.account-form__name input:focus + label,
+.account-form__name input:not(:placeholder-shown) + label,
+.account-form__lastname input:focus + label,
+.account-form__lastname input:not(:placeholder-shown) + label {
+   transform: translateY(-100%);
+   background-color: #fff;
+   padding: 0 5px;
+}
+.account-form__telephone span,
+.account-form__name span,
+.account-form__lastname span {
+   font-size: 16px;
+   color: #ff7f50;
+}
+.account-form__person {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+.account-form__name {
+   flex: 0 1 50%;
+}
+.account-form__lastname {
+   flex: 0 1 50%;
+}
+
+.pay-form {
+   margin-bottom: 30px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid hsla(240deg, 1%, 65%, 0.396);
+}
+.pay-form p::before {
+   content: "2";
+}
+.pay-form__methods {
+   display: flex;
+   gap: 10px;
+   margin-bottom: 15px;
+}
+.pay-form__method {
+   width: 100%;
+   padding: 10px 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   cursor: pointer;
+}
+.pay-form__method svg {
+   margin-right: 10px;
+}
+.pay-form__method svg path {
+   fill: #333;
+}
+.pay-form__method.active {
+   border: 2px solid rgb(1, 178, 89);
+}
+.pay-form__method.active svg path {
+   fill: rgb(1, 178, 89);
+}
+.pay-form__card {
+   display: flex;
+   gap: 20px;
+}
+.pay-form__card img {
+   max-width: 60px;
+}
+.pay-form__card .payme img {
+   margin-left: 10px;
+}
+.pay-form__card .payme,
+.pay-form__card .click {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 5px 10px;
+   border-radius: 6px;
+   /* Изменяем цвет радиокнопок */
+   /* Изменяем цвет выбранной радиокнопки */
+}
+.pay-form__card .payme:hover input,
+.pay-form__card .payme label,
+.pay-form__card .click:hover input,
+.pay-form__card .click label {
+   cursor: pointer;
+}
+.pay-form__card .payme input[type="radio"],
+.pay-form__card .click input[type="radio"] {
+   appearance: none; /* Убираем стандартный внешний вид */
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   border: 1px solid #ccc;
+   outline: none;
+   position: relative;
+}
+.pay-form__card .payme input[type="radio"]::before,
+.pay-form__card .click input[type="radio"]::before {
+   content: "";
+   display: inline-block;
+   width: 8px;
+   height: 8px;
+   background-color: rgb(1, 178, 89);
+   border-radius: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: none;
+}
+.pay-form__card .payme input[type="radio"]:checked,
+.pay-form__card .click input[type="radio"]:checked {
+   background-color: #fff;
+   border-color: rgb(1, 178, 89);
+}
+.pay-form__card .payme input[type="radio"]:checked::before,
+.pay-form__card .click input[type="radio"]:checked::before {
+   display: inline-block;
+}
+.pay-form__cash {
+   display: none;
+   align-items: center;
+}
+.pay-form__cash span {
+   color: rgb(1, 178, 89);
+   display: inline-block;
+   margin-right: 15px;
+   font-size: 22px;
+}
+@media (max-width: 1200px) {
+   .pay-form__cash span {
+      font-size: calc(16px + 6 * ((100vw - 320px) / 880));
+   }
+}
+
+.delivery-form {
+   margin-bottom: 40px;
+}
+.delivery-form p::before {
+   content: "3";
+}
+.delivery-form__tabs {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 20px;
+}
+.delivery-form__tab {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   padding: 10px 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   cursor: pointer;
+   /* Изменяем цвет радиокнопок */
+   /* Изменяем цвет выбранной радиокнопки */
+}
+.delivery-form__tab.active {
+   border: 2px solid rgb(1, 178, 89);
+}
+.delivery-form__tab input[type="radio"] {
+   appearance: none; /* Убираем стандартный внешний вид */
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   border: 1px solid #ccc;
+   outline: none;
+   position: relative;
+}
+.delivery-form__tab input[type="radio"]::before {
+   content: "";
+   display: inline-block;
+   width: 8px;
+   height: 8px;
+   background-color: rgb(1, 178, 89);
+   border-radius: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: none;
+}
+.delivery-form__tab input[type="radio"]:checked {
+   background-color: #fff;
+   border-color: rgb(1, 178, 89);
+}
+.delivery-form__tab input[type="radio"]:checked::before {
+   display: inline-block;
+}
+
+.city-container {
+   display: none;
+   margin-bottom: 20px;
+}
+.city-container.show {
+   display: block;
+}
+.city-container input {
+   border: 1px solid hsla(240deg, 1%, 65%, 0.396);
+   border-radius: 6px;
+   padding: 10px 15px;
+   font-family: Montserrat;
+   width: 100%;
+}
+.city-container input::placeholder {
+   opacity: 0;
+}
+.city-container input + label {
+   position: absolute;
+   left: 10px;
+   pointer-events: none;
+   transition: 0.2s;
+   transform-origin: top left;
+   padding: 0.25em;
+   font-size: 13px;
+   color: #6f7682;
+}
+.city-container label {
+   top: 5px;
+   color: #6f7682;
+   white-space: nowrap;
+}
+@media (max-width: 550px) {
+   .city-container label {
+      text-align: center;
+   }
+}
+.city-container input:focus + label,
+.city-container input:not(:placeholder-shown) + label {
+   transform: translateY(-100%);
+   background-color: #fff;
+   padding: 0 5px;
+}
+.city-container span {
+   font-size: 16px;
+   color: #ff7f50;
+}
+
+.city-and-area {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 20px;
+}
+@media (max-width: 550px) {
+   .city-and-area {
+      flex-direction: column;
+   }
+}
+
+@media (max-width: 550px) {
+   .choose-city {
+      flex: 0 1 40%;
+   }
+}
+
+@media (max-width: 550px) {
+   .choose-area {
+      flex: 0 1 60%;
+   }
+}
+
+.choose-city,
+.choose-area {
+   width: 100%;
+   border: 1px solid hsla(240deg, 1%, 65%, 0.396);
+   border-radius: 6px;
+   padding: 10px 15px;
+   font-family: Montserrat;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   position: relative;
+}
+@media (max-width: 550px) {
+   .choose-city,
+   .choose-area {
+      padding: 5px 10px;
+   }
+}
+.choose-city label,
+.choose-area label {
+   flex: 0 1 30%;
+   padding-right: 5px;
+   font-size: 14px;
+   border-right: 1px solid #ccc;
+}
+@media (max-width: 1200px) {
+   .choose-city label,
+   .choose-area label {
+      font-size: calc(12px + 2 * ((100vw - 320px) / 880));
+   }
+}
+.choose-city select,
+.choose-area select {
+   flex: 0 1 70%;
+   width: 100%;
+   font-family: Montserrat;
+   font-size: 14px;
+   border-radius: 5px;
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   overflow-y: auto;
+}
+.choose-city select:hover,
+.choose-area select:hover {
+   cursor: pointer;
+}
+.address-info {
+   display: flex;
+   gap: 10px;
+}
+
+.choose-adress {
+   flex: 0 1 80%;
+   position: relative;
+}
+
+.choose-appartment-number {
+   flex: 0 1 20%;
+   position: relative;
+}
+
+.delivery-time {
+   margin-top: 20px;
+   gap: 10px;
+}
+.delivery-time .clock {
+   margin-top: 15px;
+   display: flex;
+   align-items: center;
+   gap: 30px;
+}
+.delivery-time .clock .from {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   white-space: nowrap;
+}
+.delivery-time .clock .to {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   white-space: nowrap;
+}
+.delivery-time input {
+   width: 100%;
+}
+
+.time-form {
+   margin-bottom: 20px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid hsla(240deg, 1%, 65%, 0.396);
+}
+.time-form p::before {
+   content: "4";
+}
+.time-form input {
+   border: 1px solid hsla(240deg, 1%, 65%, 0.396);
+   border-radius: 6px;
+   padding: 10px 15px;
+   font-family: Montserrat;
+   width: 100%;
+}
+
+.pay-check-button {
+   text-align: center;
+}
+.pay-check-button button {
+   border: 1px solid hsla(240deg, 1%, 65%, 0.396);
+   border-radius: 10px;
+   padding: 10px 25px;
+   background-color: rgb(1, 178, 89);
+   color: #fff;
+   font-family: Montserrat;
+   font-size: 22px;
+   transition: all 0.3s ease 0s;
+}
+@media (max-width: 1200px) {
+   .pay-check-button button {
+      font-size: calc(18px + 4 * ((100vw - 320px) / 880));
+   }
+}
+.pay-check-button button:hover {
+   background-color: rgb(6, 146, 76);
+}
+
+/*-----------------------------------------------------------------------------------------*/
