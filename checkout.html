@@ -5,9 +5,15 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-   <link rel="stylesheet" href="css/style.min.css">
+   <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/checkout.css">
-   <title>Таблица размеров</title>
+   <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+   <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+   <title>Офрмление заказа</title>
 </head>
 
 <body class="body">
@@ -20,7 +26,7 @@
                      <a href="tel:+998901192620" tabindex="1">+998 90 119 26 20</a>
                   </div>
                   <div class="top-header__delivery">
-                     <a href="#" tabindex="2">доставка</a>
+                     <a href="delivery/" tabindex="2">доставка</a>
                   </div>
                </div>
             </div>
@@ -29,12 +35,20 @@
             <div class="middle-header__body container">
                <div class="middle-header__logo">
                   <a href="https://crossmag.uz/">
-                     <img src="img/header/logo.png" alt="crossMag">
+                     <picture>
+                        <source srcset="img/header/logo.webp" type="image/webp"><img src="img/header/logo.png"
+                           alt="crossMag">
+                     </picture>
                   </a>
                </div>
                <form action="/search" method="GET" class="middle-header__search">
                   <input type="search" name="q" placeholder="поиск..." tabindex="3">
-                  <button type="submit" tabindex="4"><img src="img/header/search.png" alt="search"></button>
+                  <button type="submit" tabindex="4">
+                     <picture>
+                        <source srcset="img/header/search.webp" type="image/webp"><img src="img/header/search.png"
+                           alt="search">
+                     </picture>
+                  </button>
                </form>
                <div class="middle-header__icons">
                   <div class="middle-header__link">
@@ -63,7 +77,7 @@
             <div class="bottom-header__body container">
                <div class="bottom-header__search"></div>
                <div class="bottom-header__catalog">
-                  <a href="#">подобрать</a>
+                  <a href="catalog/">подобрать</a>
                </div>
                <div class="bottom-header__menu menu">
                   <div class="menu__icon">
@@ -71,11 +85,11 @@
                   </div>
                   <nav class="menu__body">
                      <ul class="menu__list">
-                        <li><a href="#" class="menu__link">Главная</a></li>
-                        <li><a href="#" class="menu__link">Каталог</a></li>
-                        <li><a href="#" class="menu__link">Оплата</a></li>
-                        <li><a href="#" class="menu__link">Доставка</a></li>
-                        <li><a href="#" class="menu__link">О нас</a></li>
+                        <li><a href="https://crossmag.uz/" class="menu__link">Главная</a></li>
+                        <li><a href="catalog/" class="menu__link">Каталог</a></li>
+                        <li><a href="delivery/index.html#pay" class="menu__link">Оплата</a></li>
+                        <li><a href="delivery/" class="menu__link">Доставка</a></li>
+                        <li><a href="about/" class="menu__link">О нас</a></li>
                      </ul>
                   </nav>
                </div>
@@ -88,7 +102,7 @@
                <div class="cart__button-close">×</div>
                <div class="cart__checkout">
                   <a href="#" class="resume-buy">продолжить покупки</a>
-                  <a href="#" class="go-check _icon-bagicon">оформить заказ</a>
+                  <a href="checkout.html" class="go-check _icon-bagicon">оформить заказ</a>
                </div>
             </div>
          </div>
@@ -223,7 +237,10 @@
                            <div class="click">
                               <input type="radio" id="clickButton" name="payment" value="click">
                               <label for="clickButton">
-                                 <img src="img/home/Click.webp" alt="click">
+                                 <picture>
+                                    <source srcset="img/home/Click.webp" type="image/webp"><img
+                                       src="img/home/Click.webp" alt="click">
+                                 </picture>
                               </label>
                            </div>
                         </div>
@@ -309,13 +326,45 @@
                            </div>
                         </div>
                      </div>
-                     <div class="pay-check-button">
-                        <button type="submit">Оформить покупку</button>
-                     </div>
                   </div>
                   <div class="checkout__info">
-                     <p style="text-align: center;margin-top:25px;">Ваши товары</p>
+                     <p class="checkout__info-title">Ваши товары</p>
+                     <div class="checkout__items">
+                        <div class="cart__item">
+                           <img class="cart__item-image" src="img/home/reebok1.jpg" alt="Product Image"
+                              data-image="img/home/reebok1.jpg">
+                           <div class="cart__item-info">
+                              <h3 class="cart__item-name" data-name="Reebok Classic leather">Reebok Classic leather</h3>
+                              <p class="cart__item-price" data-price="450000">450 000 сум</p>
+                              <p class="cart__item-size" data-size="39">Размер: 39</p>
+                              <p class="cart__item-additional-size" data-additional-size="40">Доп. размер: 40</p>
+                              <p class="cart__item-quantity" data-quantity="1">Количество: 1</p>
+                              <button class="cart__item-remove">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="none">
+                                    <path
+                                       d="M17.1514 4.80787C17.1514 4.40275 16.9905 4.01422 16.704 3.72775C16.4176 3.44129 16.029 3.28035 15.6239 3.28035H12.8133C12.673 2.58973 12.2984 1.96883 11.7527 1.52286C11.2071 1.07688 10.524 0.833252 9.81933 0.833252C9.11462 0.833252 8.43158 1.07688 7.88594 1.52286C7.3403 1.96883 6.96562 2.58973 6.82538 3.28035H4.01474C3.63607 3.28352 3.27208 3.42723 2.99338 3.6836C2.71468 3.93997 2.54114 4.29072 2.50643 4.66781C2.47172 5.04489 2.57832 5.42143 2.80554 5.72437C3.03275 6.02731 3.3644 6.23505 3.73612 6.30729L4.22798 16.626C4.25945 17.311 4.554 17.9575 5.05026 18.4308C5.54652 18.9041 6.20623 19.1676 6.89198 19.1666H12.7467C13.4324 19.1676 14.0921 18.9041 14.5884 18.4308C15.0847 17.9575 15.3792 17.311 15.4107 16.626L15.8995 6.30729C16.2504 6.24292 16.5678 6.05773 16.7964 5.78385C17.0251 5.50997 17.1507 5.16467 17.1514 4.80787ZM9.81933 2.05833C10.1971 2.0599 10.5651 2.17814 10.8731 2.39688C11.1811 2.61563 11.414 2.92419 11.5399 3.28035H8.09873C8.22464 2.92419 8.45753 2.61563 8.76552 2.39688C9.07351 2.17814 9.44156 2.0599 9.81933 2.05833ZM14.1899 16.5686C14.1729 16.9397 14.0133 17.2899 13.7444 17.5462C13.4756 17.8026 13.1182 17.9453 12.7467 17.9446H6.89198C6.5205 17.9453 6.16307 17.8026 5.89421 17.5462C5.62534 17.2899 5.46578 16.9397 5.44878 16.5686L4.96119 6.33539H14.6762L14.1899 16.5686ZM15.6239 5.11338H4.01474C3.93372 5.11338 3.85601 5.08119 3.79872 5.0239C3.74142 4.9666 3.70924 4.8889 3.70924 4.80787C3.70924 4.72685 3.74142 4.64914 3.79872 4.59185C3.85601 4.53455 3.93372 4.50237 4.01474 4.50237H15.6239C15.7049 4.50237 15.7826 4.53455 15.8399 4.59185C15.8972 4.64914 15.9294 4.72685 15.9294 4.80787C15.9294 4.8889 15.8972 4.9666 15.8399 5.0239C15.7826 5.08119 15.7049 5.11338 15.6239 5.11338Z"
+                                       fill="#BABAC0"></path>
+                                    <path
+                                       d="M7.98601 15.5006C8.14806 15.5006 8.30347 15.4362 8.41806 15.3216C8.53264 15.207 8.59702 15.0516 8.59702 14.8896V8.77947C8.59702 8.61742 8.53264 8.462 8.41806 8.34742C8.30347 8.23283 8.14806 8.16846 7.98601 8.16846C7.82396 8.16846 7.66855 8.23283 7.55396 8.34742C7.43937 8.462 7.375 8.61742 7.375 8.77947V14.8896C7.375 15.0516 7.43937 15.207 7.55396 15.3216C7.66855 15.4362 7.82396 15.5006 7.98601 15.5006Z"
+                                       fill="#BABAC0"></path>
+                                    <path
+                                       d="M11.652 15.5006C11.8141 15.5006 11.9695 15.4362 12.0841 15.3216C12.1987 15.207 12.263 15.0516 12.263 14.8896V8.77947C12.263 8.61742 12.1987 8.462 12.0841 8.34742C11.9695 8.23283 11.8141 8.16846 11.652 8.16846C11.49 8.16846 11.3346 8.23283 11.22 8.34742C11.1054 8.462 11.041 8.61742 11.041 8.77947V14.8896C11.041 15.0516 11.1054 15.207 11.22 15.3216C11.3346 15.4362 11.49 15.5006 11.652 15.5006Z"
+                                       fill="#BABAC0"></path>
+                                 </svg>
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="total-price">
+                        <p class="total-price-value">Итого: 450 000 сум</p>
+                     </div>
                   </div>
+               </div>
+
+               <div class="pay-check-button">
+                  <button type="submit">Оформить покупку</button>
+                  <p>Подтверждая заказ, я принимаю условия <a href="policy.html">Пользовательского соглашения</a></p>
                </div>
             </div>
          </div>
@@ -419,33 +468,33 @@
                <nav class="top-footer__nav">
                   <ul class="top-footer__list">
                      <li class="top-footer__link">
-                        <a href="">Главная</a>
+                        <a href="https://crossmag.uz/">Главная</a>
                      </li>
                      <li class="top-footer__link">
-                        <a href="">Каталог</a>
+                        <a href="catalog/">Каталог</a>
                      </li>
                      <li class="top-footer__link">
-                        <a href="">Оплата и доставка</a>
+                        <a href="delivery/">Оплата и доставка</a>
                      </li>
                      <li class="top-footer__link">
-                        <a href="">Возврат</a>
+                        <a href="delivery/return/">Возврат</a>
                      </li>
                      <li class="top-footer__link">
-                        <a href="">Вопрос-ответ</a>
+                        <a href="faq/">Вопрос-ответ</a>
                      </li>
                   </ul>
                   <ul class="top-footer__list">
                      <li class="top-footer__link">
-                        <a href="">Новинки</a>
+                        <a href="catalog/">Новинки</a>
                      </li>
                      <li class="top-footer__link">
-                        <a href="">Бренды</a>
+                        <a href="catalog/">Бренды</a>
                      </li>
                      <li class="top-footer__link">
                         <a href="catalog/index.html?option=price-exp">Топ продаж</a>
                      </li>
                      <li class="top-footer__link">
-                        <a href="">Размерная сетка</a>
+                        <a href="delivery/size-table/">Размерная сетка</a>
                      </li>
                   </ul>
                </nav>
@@ -479,20 +528,20 @@
                      </div>
                   </div>
                   <div class="top-footer__telephone">
-                     <a href="">+998 90 119 26 20</a>
+                     <a href="tel:+998901192620">+998 90 119 26 20</a>
                   </div>
                </div>
             </div>
             <div class="footer__bottom bottom-footer">
                <div class="bottom-footer__text">
                   <p>crossMAG 2023. All right reserved</p>
-                  <a href="" class="bottom-footer__link">Политика конфиденциальности</a>
+                  <a href="policy.html" class="bottom-footer__link">Политика конфиденциальности</a>
                </div>
             </div>
          </div>
       </footer>
-      <script src="js/app.min.js"></script>
-      <script src="js/checkout.js"></script>
+      <script src="js/app.min.js?_v=20230705160031"></script>
+      <script src="js/checkout.js?_v=20230705160031"></script>
    </div>
 </body>
 
