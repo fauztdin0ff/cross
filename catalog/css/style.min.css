@@ -1108,7 +1108,6 @@ main {
 .product__card-items {
    display: -ms-grid;
    display: grid;
-   -ms-grid-columns: (1fr) [3];
    grid-template-columns: repeat(3, 1fr);
    gap: 10px;
    row-gap: 20px;
@@ -1902,6 +1901,8 @@ main {
    border: 1px solid #ccc;
    border-radius: 4px;
    padding: 3px;
+   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+   -webkit-tap-highlight-color: transparent;
 }
 .popup__quantity .quantity-wrapper .minus,
 .popup__quantity .quantity-wrapper .plus {
@@ -1911,6 +1912,8 @@ main {
    -webkit-transform: translateY(1px);
    -ms-transform: translateY(1px);
    transform: translateY(1px);
+   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+   -webkit-tap-highlight-color: transparent;
 }
 .popup__quantity .quantity-wrapper .quantity-input {
    width: 50px;
